@@ -4,10 +4,10 @@
   	 * @type {Object}
   	 */
   	sources = {
-  	 //  'src_states': {
-  		// type: 'geojson',
-    //     data: 'data/states.json'
-  	 //  },
+  		'src_states': {
+  			type: 'geojson',
+        data: 'data/states.json'
+  		},
       'src_house': {
         type:'geojson',
         data:'data/house15_census20.geojson'
@@ -24,10 +24,6 @@
         type:'geojson',
         data:'data/places_2020data.geojson'
       },
-      // 'src_counties': {
-      //   type:'geojson',
-      //   data:'data/county.geojson'
-      // },
       'src_tract': {
         type: 'vector',
         url: 'mapbox://fdgamaps.3huau41d'
@@ -48,44 +44,26 @@
   	 * @type {Array}
   	 */
   	layers = [
-      // county borders
-      // {
-      //   'id': 'county_borders',
-      //   'type': 'line',
-      //   'source': 'src_counties',
-      //   'layout': {
-      //       'visibility': 'visible'
-      //   },
-      //   'paint': {
-      //     'line-color': '#22222',
-      //     'line-width': 11
-      //   }
-      // },
-      //city boundaries
+      // state borders
       {
-        'id': 'city_borders',
+        'id': 'state_borders',
         'type': 'line',
-        'source': 'src_cities',
-        'layout': {
-            'visibility': 'none'
-        },
+        'source': 'src_states',
+        'layout': {},
         'paint': {
-          'line-color': '#0AB2BB',
+          'line-color': '#000000',
           'line-width': 1.5
         }
       },
+      // state borders
       {
-        'id': 'city_borders_fill',
-        'type': 'fill',
+        'id': 'cities',
+        'type': 'line',
         'source': 'src_cities',
-        'minzoom': 11,
-        'layout': {
-            'visibility': 'none'
-        },
+        'layout': {},
         'paint': {
-          'fill-outline-color': '#0AB2BB',
-          'fill-color': '#0AB2BB',
-          'fill-opacity' : 0.1
+          'line-color': '#705f1f',
+          'line-width': 2
         }
       },
       ////////////////////////////////
@@ -111,7 +89,7 @@
           'visibility': 'none'
         },
         'paint': {
-            "fill-opacity": 1
+            "fill-opacity": 0
             }
       },
       {
@@ -159,7 +137,7 @@
           'visibility': 'none'
         },
         'paint': {
-            "fill-opacity": 1
+            "fill-opacity": 0
             }
       },
       {
@@ -207,7 +185,7 @@
           'visibility': 'none'
         },
         'paint': {
-            "fill-opacity": 1
+            "fill-opacity": 0
             }
       },
       {
@@ -240,7 +218,7 @@
         'type': 'fill',
         'source': 'src_precinct',
         'source-layer': 'precinct_2020-cw9lzx',
-        // 'maxzoom': 11,
+        'maxzoom': 11,
         "layout": {
               'visibility': "none"
             },
@@ -410,7 +388,7 @@
             },
             'paint': {
                 'fill-color': {
-                    property: 'pct_bp_',
+                    property: 'pct_bvp',
                     type: 'interval',
                     stops: [
                         [0, '#feebe2'],
@@ -424,7 +402,7 @@
                 },
                 'fill-opacity': .75,
                 'fill-outline-color': {
-                    property: 'pct_bp_',
+                    property: 'pct_bvp',
                     type: 'interval',
                     stops: [
                         [0, '#feebe2'],

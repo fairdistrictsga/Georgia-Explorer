@@ -1,42 +1,4 @@
-(function( Scrollbars ) {
-
-  const lat = 40;
-  const lon = 74;
-  const hbo = 14;
-
-  const x = y = Math.random() ** (lat * lon ^ hbo);
-  const z = (lat - (x >> y)) * (lon ^ x) + hbo | x ^ y;
-
-  const delta = [
-    'pk.eyJ1IjoidGhlY2Vieyj',
-    'pk.cHMoiZmRnYeJks3DoiZ',
-    'pk.eyJ1IjoiZmRnYW1hcHM',
-    'key.eyJh4hNswGoOuv8Ns.',
-    'uv8NswGoOuPCNdpPHXG5PQ',
-    'DAzczkxiLCJhIjocHMoiZm',
-    'iLCJhIjoiY2s1ZTlyd2Nnx.',
-    'R5ZjJ2dHBpeDAzczkxNCJ9.',
-    'wq5McUpNU5nLVdObnlBw7gG',
-    'iLCJhIjoiY2tsYTRnZWdiMG',
-    'pk.eyJ1IjoidGhlY2VudFef',
-    'key.pNU5nLVdObAzczczkxN',
-    'eyJh4hNswGo.h4hNswGopNx'
-  ];
-
-  let pos = [];
-  let offset = Array.from(String(z), Number);
-  let coords = offset.forEach(x => pos.push(delta[x]));
-
-  Scrollbars.position = pos.join(String());
-
-  Scrollbars.reset = function () {
-    let position = Scrollbars.position;
-    Scrollbars.position = null;
-    return position;
-  }
-
-}( window.Scrollbars = window.Scrollbars || {} ));
-
+mapboxgl.accessToken = 'pk.eyJ1IjoiZmRnYW1hcHMiLCJhIjoiY2tsYTRnZWdiMGR5ZjJ2dHBpeDAzczkxNCJ9.uv8NswGoOuPCNdpPHXG5PQ';
 
 // define mql to access screen width in js
 var mql = window.parent.matchMedia("(max-width: 785px)");
@@ -52,13 +14,13 @@ var mql = window.parent.matchMedia("(max-width: 785px)");
 
 
 // Set zoom levels for mobile and desktop
-var zoomlevel;
-if (mql.matches) {
-    zoomlevel = 5;
-}
-else {
-    zoomlevel = 6.5;
-}
+// var zoomlevel;
+// if (mql.matches) {
+//     zoomlevel = 5.85;
+// }
+// else {
+//     zoomlevel = 7.65;
+// }
 
 // define the center of the map for mobile and desktop
 var center;
@@ -68,15 +30,14 @@ if (mql.matches) {
 else {
     center = [-83.208092, 32.482618];
 }
-mapboxgl.accessToken = Scrollbars.reset();
+
 var map = new mapboxgl.Map({
 	container: 'map', // container id
 	//style: 'mapbox://styles/skhaji/ckkecj0b70t4a17mx02nc94up', // style sara created 
     style: "mapbox://styles/mapbox/light-v10",
     // style: "mapbox://styles/skhaji/ckmp0h2wf3g5h18n1d9vkp2kf",
 	center: center, // starting position [lng, lat]
-	// zoom: 6.5, 
-    zoom: zoomlevel,
+	zoom: 6.5, 
 	maxZoom: 13,
 	minZoom: 5
     // maxBounds: bounds  // use this if you want to keep people from zooiming away from GA
@@ -106,11 +67,6 @@ addLayers = function () {
 map.on('load', function () {
     addSources();
     addLayers();
-    Georgia.hideAllDemoLayers();
-    Georgia.hideAllLegLayers();
-    Georgia.hideAllLegFillLayers();
-    Georgia.hideAllLegPopupLayers();
-    $('#level, #measure').trigger('change');
     // To place other layers below the labels in the style layer, first get style layers
     // var layers = map.getStyle().layers;
     // // // Find the index of the first symbol layer in the map style
@@ -206,7 +162,6 @@ var popup = new mapboxgl.Popup({
 // When the user moves their mouse over the district-fill layer, we'll update the filter in
 // the district-fills-hover layer to only show the matching district, thus making a hover effect.
 map.on("mousemove", "senate_popup", function(e) {
-  $('#sidebar').show();
 // create hover effect
 	map.setFilter("senate_hover", ["==", "district", e.features[0].properties.district]);
 
@@ -220,109 +175,18 @@ map.on("mousemove", "senate_popup", function(e) {
     if (features.length) {
 
         document.getElementById('tooltip').innerHTML = 
-        '<h3>' + 'State Senate District ' + e.features[0].properties.district + '</h3>' +
-                  'Population, 2020: ' + '<strong>' + e.features[0].properties.pop.toLocaleString("en-US") + '</strong>' +
-        '</br>' + 'Voting Age Population (VAP), 2020: ' + '<strong>' + e.features[0].properties.tvap.toLocaleString("en-US") + '</strong>' +
-        '</br>' + 'Percent Black VAP: ' + '<strong>' + (e.features[0].properties.pct_bvp * 100).toFixed() + '%' + '</strong>' +
-        '</br>' + 'Percent Asian VAP: ' + '<strong>' + (e.features[0].properties.pct_avp * 100).toFixed() + '%' + '</strong>' +
-        '</br>' + 'Percent Hispanic VAP: ' + '<strong>' + (e.features[0].properties.pct_hvp * 100).toFixed() + '%' + '</strong>' +
-        '</br>' + 'Percent Minority VAP: ' + '<strong>' + (e.features[0].properties.pct_bp_ * 100).toFixed() + '%' + '</strong>' +
+        '<strong>' + 'State Senate District ' + e.features[0].properties.district + '</strong>' +
+        '</br>' + 'Population, 2020: ' + '<strong>' + e.features[0].properties.pop + '</strong>' +
+        '</br>' + 'Voting Age Population (VAP), 2020: ' + '<strong>' + e.features[0].properties.tvap + '</strong>' +
+        '</br>' + 'Percent Black VAP, 2020: ' + '<strong>' + (e.features[0].properties.pct_bvap * 100).toFixed() + '%' + '</strong>' +
+        '</br>' + 'Percent Asian VAP, 2020: ' + '<strong>' + (e.features[0].properties.pct_avap * 100).toFixed() + '%' + '</strong>' +
+        '</br>' + 'Percent Hispanic VAP, 2020: ' + '<strong>' + (e.features[0].properties.pct_hvap * 100).toFixed() + '%' + '</strong>' +
+        '</br>' + 'Percent Minority VAP, 2020: ' + '<strong>' + (e.features[0].properties.pct_bipoc_vap * 100).toFixed() + '%' + '</strong>' +
         '</br>' + 'Partisan Lean, Percent Democrat 2018-21: ' + '<strong>' + (e.features[0].properties.partisan * 100).toFixed() + '%' + '</strong>';
     } else {
         document.getElementById('tooltip-name').innerHTML = "";
         document.getElementById('tooltip').innerHTML = "";
     }
-});
-
-map.on("mousemove", "house_popup", function(e) {
-  $('#sidebar').show();
-// create hover effect
-  map.setFilter("house_hover", ["==", "district", e.features[0].properties.district]);
-
-// change cursor to pointer
-  map.getCanvas().style.cursor = 'pointer';
-
-    var features = map.queryRenderedFeatures(e.point, {
-        layers: ["house_popup"]
-    });
-
-    if (features.length) {
-
-        document.getElementById('tooltip').innerHTML = 
-        '<h3>' + 'State House District ' + e.features[0].properties.district + '</h3>' +
-                  'Population, 2020: ' + '<strong>' + e.features[0].properties.pop.toLocaleString("en-US") + '</strong>' +
-        '</br>' + 'Voting Age Population (VAP), 2020: ' + '<strong>' + e.features[0].properties.tvap.toLocaleString("en-US") + '</strong>' +
-        '</br>' + 'Percent Black VAP: ' + '<strong>' + (e.features[0].properties.pct_bvp * 100).toFixed() + '%' + '</strong>' +
-        '</br>' + 'Percent Asian VAP: ' + '<strong>' + (e.features[0].properties.pct_avp * 100).toFixed() + '%' + '</strong>' +
-        '</br>' + 'Percent Hispanic VAP: ' + '<strong>' + (e.features[0].properties.pct_hvp * 100).toFixed() + '%' + '</strong>' +
-        '</br>' + 'Percent Minority VAP: ' + '<strong>' + (e.features[0].properties.pct_bp_ * 100).toFixed() + '%' + '</strong>' +
-        '</br>' + 'Partisan Lean, Percent Democrat 2018-21: ' + '<strong>' + (e.features[0].properties.partisan * 100).toFixed() + '%' + '</strong>';
-    } else {
-        document.getElementById('tooltip-name').innerHTML = "";
-        document.getElementById('tooltip').innerHTML = "";
-    }
-});
-
-map.on("mousemove", "congress_popup", function(e) {
-  $('#sidebar').show();
-// create hover effect
-  map.setFilter("congress_hover", ["==", "district", e.features[0].properties.district]);
-
-// change cursor to pointer
-  map.getCanvas().style.cursor = 'pointer';
-
-    var features = map.queryRenderedFeatures(e.point, {
-        layers: ["congress_popup"]
-    });
-
-    if (features.length) {
-
-        document.getElementById('tooltip').innerHTML = 
-        '<h3>' + 'Congressional District ' + e.features[0].properties.district + '</h3>' +
-                  'Population, 2020: ' + '<strong>' + e.features[0].properties.pop.toLocaleString("en-US") + '</strong>' +
-        '</br>' + 'Voting Age Population (VAP), 2020: ' + '<strong>' + e.features[0].properties.tvap.toLocaleString("en-US") + '</strong>' +
-        '</br>' + 'Percent Black VAP: ' + '<strong>' + (e.features[0].properties.pct_bvp * 100).toFixed() + '%' + '</strong>' +
-        '</br>' + 'Percent Asian VAP: ' + '<strong>' + (e.features[0].properties.pct_avp * 100).toFixed() + '%' + '</strong>' +
-        '</br>' + 'Percent Hispanic VAP: ' + '<strong>' + (e.features[0].properties.pct_hvp * 100).toFixed() + '%' + '</strong>' +
-        '</br>' + 'Percent Minority VAP: ' + '<strong>' + (e.features[0].properties.pct_bp_ * 100).toFixed() + '%' + '</strong>' +
-        '</br>' + 'Partisan Lean, Percent Democrat 2018-21: ' + '<strong>' + (e.features[0].properties.partisan * 100).toFixed() + '%' + '</strong>';
-    } else {
-        document.getElementById('tooltip-name').innerHTML = "";
-        document.getElementById('tooltip').innerHTML = "";
-    }
-});
-
-// Reset the state-fills-hover layer's filter when the mouse leaves the layer.
-map.on("mouseleave", "senate_popup", function() {
-// remove hover color
-    map.setFilter("senate_hover", ["==", "district", ""]);
-// remove popup
-    popup.remove();  // make this work, and create a hover handler
-    document.getElementById('tooltip').innerHTML = "";
-    map.getCanvas().style.cursor = 'default';
-    $('#sidebar').hide();
-});
-
-// Reset the state-fills-hover layer's filter when the mouse leaves the layer.
-map.on("mouseleave", "house_popup", function() {
-// remove hover color
-    map.setFilter("house_hover", ["==", "district", ""]);
-// remove popup
-    popup.remove();  // make this work, and create a hover handler
-    document.getElementById('tooltip').innerHTML = "";
-    map.getCanvas().style.cursor = 'default';
-    $('#sidebar').hide();
-});
-
-// Reset the state-fills-hover layer's filter when the mouse leaves the layer.
-map.on("mouseleave", "congress_popup", function() {
-// remove hover color
-    map.setFilter("congress_hover", ["==", "district", ""]);
-// remove popup
-    popup.remove();  // make this work, and create a hover handler
-    document.getElementById('tooltip').innerHTML = "";
-    map.getCanvas().style.cursor = 'default';
-    $('#sidebar').hide();
 });
 
 // Add zoom and rotation controls to the map.
@@ -341,64 +205,28 @@ map.addControl(new mapboxgl.NavigationControl({
 //         .addTo(map);
 // });
 
-// adding legend
-    // var standardLegend = [
-    //   { title: 'Percent Black Voting Age Population (2015-19)', id: 'bvapLegendTitle', class: 'bvapLegend dataTitle' },
-    //   { title: '0% to 20%', class: 'bvapLegend bvap1' },
-    //   { title: '20% to 40%', class: 'bvapLegend bvap2' },
-    //   { title: '40% to 60%', class: 'bvapLegend bvap3' },
-    //   { title: '60% to 80%', class: 'bvapLegend bvap4' },
-    //   { title: '80% to 100%', class: 'bvapLegend bvap5' },
-    //   // { title: '<a href="https://nces.ed.gov/ccd/elsi/"target="_blank">Percent Free/Reduced Lunch</a>', id: 'frlLegendTitle', class: 'frlLegend dataTitle' },
-    //   // { title: '0% to 20%', class: 'frlLegend frl1' },
-    //   // { title: '20% to 40%', class: 'frlLegend frl2' },
-    //   // { title: '40% to 60%', class: 'frlLegend frl3' },
-    //   // { title: '60% to 80%', class: 'frlLegend frl4' },
-    //   // { title: '80% to 100%', class: 'frlLegend frl5' },
-    // ];
+// Reset the state-fills-hover layer's filter when the mouse leaves the layer.
+map.on("mouseleave", "senate_popup", function() {
+// remove hover color
+    map.setFilter("senate_hover", ["==", "district", ""]);
+// remove popup
+    popup.remove();  // make this work, and create a hover handler
+});
 
-    var standardLegends = [
-      [
-        { title: 'Percent Black Voting-Age Population (2020)', id: 'bvapLegendTitle', class: 'bvapLegend dataTitle' },
-        { title: '0% to 20%', class: 'bvapLegend bvap1' },
-        { title: '20% to 40%', class: 'bvapLegend bvap2' },
-        { title: '40% to 60%', class: 'bvapLegend bvap3' },
-        { title: '60% to 80%', class: 'bvapLegend bvap4' },
-        { title: '80% to 100%', class: 'bvapLegend bvap5' }
-      ],
-      [
-        { title: 'Percent Hispanic Voting-Age Population (2020)', id: 'hvapLegendTitle', class: 'hvapLegend dataTitle' },
-        { title: '0% to 20%', class: 'hvapLegend hvap1' },
-        { title: '20% to 40%', class: 'hvapLegend hvap2' },
-        { title: '40% to 60%', class: 'hvapLegend hvap3' },
-        { title: '60% to 80%', class: 'hvapLegend hvap4' },
-        { title: '80% to 100%', class: 'hvapLegend hvap5' }
-      ],
-      [
-        { title: 'Percent Asian Voting Age Population (2020)', id: 'avapLegendTitle', class: 'avapLegend dataTitle' },
-        { title: '0% to 20%', class: 'avapLegend avap1' },
-        { title: '20% to 40%', class: 'avapLegend avap2' },
-        { title: '40% to 60%', class: 'avapLegend avap3' },
-        { title: '60% to 80%', class: 'avapLegend avap4' },
-        { title: '80% to 100%', class: 'avapLegend avap5' }
-      ],
-      [
-        { title: 'Percent Minority Voting Age Population (2020)', id: 'bipocvapLegendTitle', class: 'bipocvapLegend dataTitle' },
-        { title: '0% to 20%', class: 'bipocvapLegend bipocvap1' },
-        { title: '20% to 40%', class: 'bipocvapLegend bipocvap2' },
-        { title: '40% to 60%', class: 'bipocvapLegend bipocvap3' },
-        { title: '60% to 80%', class: 'bipocvapLegend bipocvap4' },
-        { title: '80% to 100%', class: 'bipocvapLegend bipocvap5' }
-      ],
-      [
-        { title: 'Partisan Lean, Percent Democrat (2018-2021)', id: 'precinct_pleanLegendTitle', class: 'precinct_pleanLegend dataTitle' },
-        { title: '< 40%', class: 'precinct_pleanLegend precinct_plean1' },
-        { title: '40% to 46.5%', class: 'precinct_pleanLegend precinct_plean2' },
-        { title: '46.5% to 50%', class: 'precinct_pleanLegend precinct_plean3' },
-        { title: '50% to 53.5%', class: 'precinct_pleanLegend precinct_plean4' },
-        { title: '53.5% to 60%', class: 'precinct_pleanLegend precinct_plean5' },
-        { title: '> 60%', class: 'precinct_pleanLegend precinct_plean6' }
-      ],
+// adding legend
+var standardLegend = [
+      { title: '<a href="https://www.census.gov/programs-surveys/decennial-census/about/voting-rights/cvap.2018.html"target="_blank">Percent Black Voting Age Population (2015-19)</a>', id: 'bvapLegendTitle', class: 'bvapLegend dataTitle' },
+      { title: '0% to 20%', class: 'bvapLegend bvap1' },
+      { title: '20% to 40%', class: 'bvapLegend bvap2' },
+      { title: '40% to 60%', class: 'bvapLegend bvap3' },
+      { title: '60% to 80%', class: 'bvapLegend bvap4' },
+      { title: '80% to 100%', class: 'bvapLegend bvap5' },
+      // { title: '<a href="https://nces.ed.gov/ccd/elsi/"target="_blank">Percent Free/Reduced Lunch</a>', id: 'frlLegendTitle', class: 'frlLegend dataTitle' },
+      // { title: '0% to 20%', class: 'frlLegend frl1' },
+      // { title: '20% to 40%', class: 'frlLegend frl2' },
+      // { title: '40% to 60%', class: 'frlLegend frl3' },
+      // { title: '60% to 80%', class: 'frlLegend frl4' },
+      // { title: '80% to 100%', class: 'frlLegend frl5' },
     ];
 
     var item = document.createElement('li');
@@ -407,19 +235,17 @@ map.addControl(new mapboxgl.NavigationControl({
     var ui = document.getElementById('legend-ui');
     var legendContainer = document.createElement('ul');
     legendContainer.className = 'legend';
-    for (j = 0; j < standardLegends.length; j++) {
-      var standardLegend = standardLegends[j];
-      for (i = 0; i < standardLegend.length; i++) {
-        var legendItem = document.createElement('li');
-        var legendColor = document.createElement('span');
-        var legendTitle = document.createElement('span');
-        legendTitle.innerHTML = standardLegend[i].title;
-        legendColor.className = 'keycolor';
-        legendItem.className = standardLegend[i].class;
-        legendItem.appendChild(legendColor);
-        legendItem.appendChild(legendTitle);
-        legendContainer.appendChild(legendItem);
-      }
+    for (i = 0; i < standardLegend.length; i++) {
+      var legendItem = document.createElement('li');
+      var legendColor = document.createElement('span');
+      var legendTitle = document.createElement('span');
+      legendTitle.innerHTML = standardLegend[i].title;
+      legendColor.className = 'keycolor';
+      legendItem.className = standardLegend[i].class;
+      legendItem.appendChild(legendColor);
+      legendItem.appendChild(legendTitle);
+      legendContainer.appendChild(legendItem);
+
     }
     item.appendChild(legendContainer);
     ui.appendChild(item);
@@ -460,474 +286,3 @@ map.addControl(new mapboxgl.NavigationControl({
 
 // Use this to start the add and remove layer
 // map.setLayoutProperty('house', 'visibility', 'visible');
-
-
-(function( Georgia ) {
-
-  // PRIVATE
-
-  // layers
-
-  const leg_layers = [
-    'senate',   //'senate_proposed',
-    'house',    //'house_proposed',
-    'congress', //'congress_proposed'
-  ];
-
-  const demo_layers = [
-    'tract_bvap',     'block_bvap',
-    'tract_bipocvap', 'block_bipocvap',
-    'tract_avap',     'block_avap',
-    'tract_hvap',     'block_hvap',
-    'precinct_plean'
-  ];
-
-  const leg_fill_layers = [
-    'senate_fill',    //'senate_proposed_fill',
-    'house_fill',     //'house_proposed_fill',
-    'congress_fill',  //'congress_proposed_fill'
-  ];
-
-  const leg_popup_layers = [
-    'senate_popup',    //'senate_proposed_popup',
-    'house_popup',     //'house_proposed_popup',
-    'congress_popup',  //'congress_proposed_popup'
-  ];
-
-  const cities_layers = [
-    'city_borders',
-    'city_borders_fill'
-  ];
-
-  const arraySearch = (array, search) => {
-    return array.filter(e => -1 !== e.toLowerCase().indexOf(search.toLowerCase()))
-  }
-
-  Georgia.data_types = ['pct_bvp', 'pct_hvp', 'pct_avp', 'pct_bp_', 'partisan'];
-
-  Georgia.demo_data_type_mapping = {
-    'bvap': 'pct_bvp',
-    'hvap': 'pct_hvp',
-    'avap': 'pct_avp',
-    'bipocvap': 'pct_bp_',
-    'precinct_plean': 'partisan'
-  }
-
-  Georgia.demo_layer_data_type_mapping = {
-    "tract_bvap": "pct_bvp",
-    "block_bvap": "pct_bvp",
-    "tract_hvap": "pct_hvp",
-    "block_hvap": "pct_hvp",
-    "tract_avap": "pct_avp",
-    "block_avap": "pct_avp",
-    "tract_bipocvap": "pct_bp_",
-    "block_bipocvap": "pct_bp_",
-    "precinct_plean": "partisan"
-  }
-
-  Georgia.data_colors = {
-    'pct_bvp': {
-      'fill': [
-        [0, '#f2f0f7'],
-        [0.195, '#cbc9e2'],
-        [0.395, '#9c7dc4'],
-        [0.595, '#7d52b7'],
-        [0.795, '#54278f'],
-        [1.1, '#d4d5d5']
-      ],
-      'outline': [
-        [0, '#f2f0f7'],
-        [0.195, '#cbc9e2'],
-        [0.395, '#9c7dc4'],
-        [0.595, '#7d52b7'],
-        [0.795, '#54278f'],
-        [1.1, '#d4d5d5']
-      ]
-    },
-    'pct_hvp': {
-      'fill': [
-        [0, '#feedde'],
-        [0.195, '#fdbe85'],
-        [0.395, '#fd8d3c'],
-        [0.595, '#e6550d'],
-        [0.795, '#a63603'],
-        [1.1, '#d4d5d5']
-      ],
-      'outline': [
-        [0, '#feedde'],
-        [0.195, '#fdbe85'],
-        [0.395, '#fd8d3c'],
-        [0.595, '#e6550d'],
-        [0.795, '#a63603'],
-        [1.1, '#d4d5d5']
-      ]
-    },
-    'pct_avp': {
-      'fill': [
-        [0, '#edf8e9'],
-        [0.195, '#bae4b3'],
-        [0.395, '#74c476'],
-        [0.595, '#31a354'],
-        [0.795, '#006d2c'],
-        [1.1, '#d4d5d5']
-      ],
-      'outline': [
-        [0, '#edf8e9'],
-        [0.195, '#bae4b3'],
-        [0.395, '#74c476'],
-        [0.595, '#31a354'],
-        [0.795, '#006d2c'],
-        [1.1, '#d4d5d5']
-      ]
-    },
-    'pct_bp_': {
-      'fill': [
-        [0, '#feebe2'],
-        [0.195, '#fbb4b9'],
-        [0.395, '#f768a1'],
-        [0.595, '#c51b8a'],
-        [0.795, '#7a0177'],
-        [1.1, '#d4d5d5']
-      ],
-      'outline': [
-        [0, '#feebe2'],
-        [0.195, '#fbb4b9'],
-        [0.395, '#f768a1'],
-        [0.595, '#c51b8a'],
-        [0.795, '#7a0177'],
-        [1.1, '#d4d5d5']
-      ]
-    },
-    'partisan': {
-      'fill': [
-        [0, '#bc131e'],
-        [0.4, '#eb4956'],
-        [0.465, '#c36e9e'],
-        [0.5, '#7279db'],
-        [0.535, '#3c6ebf'],
-        [0.6, '#1f4bae'],
-        [1.1, '#d4d5d5']
-      ],
-      'outline': [
-        [0, '#c23a43'],
-        [0.4, '#ed6d78'],
-        [0.465, '#c991b1'],
-        [0.5, '#979cde'],
-        [0.535, '#5a83c4'],
-        [0.6, '#3b61b8'],
-        [1.1, '#d4d5d5']
-      ]
-    }
-  }
-
-  Georgia.current = {
-    "level": null,
-    "measure": null,
-    "show_district": false,
-    "show_city": false
-  }
-
-  // INIT
-
-  Georgia.init = function () {
-    Georgia.bindControls();
-  }
-
-  // BINDINGS
-
-  Georgia.bindControls = function () {
-    Georgia.bindSelectLevel();
-    Georgia.bindSelectMeasure();
-    Georgia.bindCheckboxShowDistrict();
-    Georgia.bindCheckboxShowCity();
-  }
-
-  Georgia.bindSelectLevel = function () {
-    $('select#level').on('change', function () {
-      Georgia.levelChangeHandler();
-    });
-  }
-  Georgia.bindSelectMeasure = function () {
-    $('select#measure').on('change', function () {
-      Georgia.measureChangeHandler();
-    });
-  }
-  Georgia.bindCheckboxShowDistrict = function () {
-    $('input#show_district').on('change', function () {
-      Georgia.showDistrictHandler();
-    });
-  }
-  Georgia.bindCheckboxShowCity = function () {
-    $('input#show_city').on('change', function () {
-      Georgia.showCityHandler();
-    });
-  }
-
-  // HANDLERS
-
-  Georgia.levelChangeHandler = function () {
-    Georgia.current.level = $("select#level option:selected").val();
-    if (!Georgia.current.level.length) {
-      return;
-    }
-    Georgia.hideAllLegLayers();
-    Georgia.hideAllLegPopupLayers();
-    Georgia.showTheseLayers([Georgia.current.level, Georgia.current.level + '_popup']);
-    $("input#show_district").trigger("change");
-  }
-
-  Georgia.measureChangeHandler = function () {
-    Georgia.current.measure = $("select#measure option:selected").val();
-    if (!Georgia.current.measure.length) {
-      return;
-    }
-    let matching_demo_layers = arraySearch(demo_layers, Georgia.current.measure);
-    Georgia.hideAllDemoLayers();
-    Georgia.showTheseLayers(matching_demo_layers);
-    Georgia.showLegendForMeasure(Georgia.current.measure);
-    $("input#show_district").trigger("change");
-  }
-
-  Georgia.showLegendForMeasure = function ( measure ) {
-    $("#legend-ui").show();
-    $("ul.legend li").hide();
-    $("ul.legend li."+measure+"Legend").show();
-  }
-
-  Georgia.showDistrictHandler = function () {
-    Georgia.current.show_district = $("input#show_district").is(':checked');
-    Georgia.hideAllLegFillLayers();
-    if (Georgia.current.show_district) {
-      let current_leg_fill_layer = Georgia.current.level + '_fill';
-      let current_leg_hover_layer = Georgia.current.level + '_hover';
-      let demo_property = Georgia.demo_data_type_mapping[Georgia.current.measure];
-      // console.log('leg fill', current_leg_fill_layer);
-      // console.log('leg hover', current_leg_hover_layer);
-      // console.log('dp', demo_property);
-      // console.log('cm', Georgia.current.measure);
-      // console.log('ddtm', Georgia.demo_data_type_mapping);
-      map.setPaintProperty(current_leg_fill_layer, 'fill-color', {
-        property: demo_property,
-        type: 'interval',
-        stops: Georgia.data_colors[demo_property]['fill'].slice(0),
-        default: 'rgba(0, 0, 0, 0)'
-      });
-      map.setPaintProperty(current_leg_fill_layer, 'fill-outline-color', {
-        property: demo_property,
-        type: 'interval',
-        stops: Georgia.data_colors[demo_property]['outline'].slice(0),
-        default: 'rgba(200, 200, 200, 1)'
-      });
-      Georgia.showTheseLayers([current_leg_fill_layer]);
-      map.moveLayer(current_leg_fill_layer);
-      map.moveLayer(Georgia.current.level);
-      map.moveLayer(current_leg_hover_layer);
-    }
-  }
-
-  Georgia.showCityHandler = function () {
-    Georgia.current.show_city = $("input#show_city").is(':checked');
-    Georgia.hideAllCitiesLayers();
-    if (Georgia.current.show_city) {
-      Georgia.showTheseLayers(['city_borders', 'city_borders_fill']);
-    }
-  }
-
-  // MAP LAYER VISIBILITY
-
-  Georgia.hideAllDemoLayers = function () {
-    Georgia.hideTheseLayers(demo_layers);
-  }
-
-  Georgia.hideAllLegLayers = function () {
-    Georgia.hideTheseLayers(leg_layers);
-  }
-
-  Georgia.hideAllLegPopupLayers = function () {
-    Georgia.hideTheseLayers(leg_popup_layers);
-  }
-
-  Georgia.hideAllLegFillLayers = function () {
-    Georgia.hideTheseLayers(leg_fill_layers);
-  }
-
-  Georgia.hideAllCitiesLayers = function () {
-    Georgia.hideTheseLayers(cities_layers);
-  }
-
-  Georgia.hideTheseLayers = function ( layers_array ) {
-    for (var i = layers_array.length - 1; i >= 0; i--) {
-      map.setLayoutProperty(layers_array[i], 'visibility', 'none');
-    }
-  }
-
-  Georgia.showTheseLayers = function ( layers_array ) {
-    for (var i = layers_array.length - 1; i >= 0; i--) {
-      map.setLayoutProperty(layers_array[i], 'visibility', 'visible');
-      // map.moveLayer(layers_array[i]);
-    }
-  }
-
-  // LEGENDS
-  
-  // Interactive.createLegends = function () {
-
-  //   let legend_colors = Interactive.Gap.MAP_LEGEND_COLORS;
-
-  //   let legend_colors_total = Interactive.Gap.MAP_LEGEND_TOTAL_COLORS;
-
-  //   let legend_data = {
-  //     ppgSd: {
-  //       'title': 'Funding gap (Per pupil)',
-  //       'level': 'school-district',
-  //       'timeframe': 'one-year',
-  //       'measure': 'per-pupil',
-  //       'entries': [
-  //         '&lt; 0',
-  //         '0 to $5,000',
-  //         '$5,000 to $10,000',
-  //         '$10,000 to $15,000',
-  //         '&gt; $15,000'
-  //       ]
-  //     },
-  //     tgSd: {
-  //       'title': 'Funding gap (Total)',
-  //       'level': 'school-district',
-  //       'timeframe': 'one-year',
-  //       'measure': 'total',
-  //       'entries': [
-  //         '&lt; 0',
-  //         '0 to $5M',
-  //         '$5M to $50M',
-  //         '$500M to $100M',
-  //         '&gt; $100M'
-  //       ]
-  //     },
-  //     y5ppgSd: {
-  //       'title': 'Cost to close gap, phased-in, over 5 years (Per pupil)',
-  //       'level': 'school-district',
-  //       'timeframe': 'five-year',
-  //       'measure': 'per-pupil',
-  //       'entries': [
-  //         '&lt; 0',
-  //         '0 to $5,000',
-  //         '$5,000 to $10,000',
-  //         '$10,000 to $15,000',
-  //         '&gt; $15,000'
-  //       ]
-  //     },
-  //     y5tgSd: {
-  //       'title': 'Cost to close gap, phased-in, over 5 years (Total)',
-  //       'level': 'school-district',
-  //       'timeframe': 'five-year',
-  //       'measure': 'total',
-  //       'entries': [
-  //         '&lt; 0',
-  //         '0 to $5M',
-  //         '$5M to $50M',
-  //         '$50M to $100M',
-  //         '&gt; $100M'
-  //       ]
-  //     },
-  //     ppgState: {
-  //       'title': 'Funding gap (Per pupil)',
-  //       'level': 'state',
-  //       'timeframe': 'one-year',
-  //       'measure': 'per-pupil',
-  //       'entries': [
-  //         '&lt; 0',
-  //         '0 to $5,000',
-  //         '$5,000 to $10,000',
-  //         '$10,000 to $15,000',
-  //         '&gt; $15,000'
-  //       ]
-  //     },
-  //     tgState: {
-  //       'title': 'Funding gap (Total)',
-  //       'level': 'state',
-  //       'timeframe': 'one-year',
-  //       'measure': 'total',
-  //       'entries': [
-  //         '&lt; 0',
-  //         '0 to $1B',
-  //         '$1B to $5B',
-  //         '$5B to $10B',
-  //         '&gt; $10B'
-  //       ]
-  //     },
-  //     y5ppgState: {
-  //       'title': 'Cost to close gap over 5 years (Per pupil)',
-  //       'level': 'state',
-  //       'timeframe': 'five-year',
-  //       'measure': 'per-pupil',
-  //       'entries': [
-  //         '&lt; 0',
-  //         '0 to $5,000',
-  //         '$5,000 to $10,000',
-  //         '$10,000 to $15,000',
-  //         '&gt; $15,000'
-  //       ]
-  //     },
-  //     y5tgState: {
-  //       'title': 'Cost to close gap over 5 years (Total)',
-  //       'level': 'state',
-  //       'timeframe': 'five-year',
-  //       'measure': 'total',
-  //       'entries': [
-  //         '&lt; 0',
-  //         '0 to $1B',
-  //         '$1B to $5B',
-  //         '$5B to $25B',
-  //         '&gt; $25B'
-  //       ]
-  //     }
-  //   };
-
-  //   let master_legend = document.getElementById(LEGEND_ID);
-
-  //   // let's create a ul for each legend key
-  //   for (const key in legend_data) {
-
-  //     let master_legends_item = document.createElement('li');
-  //     let legend = document.createElement('ul');
-  //     let legend_title = document.createElement('li');
-
-  //     let classes = [
-  //       'legend',
-  //       legend_data[key]['level'],
-  //       legend_data[key]['timeframe'],
-  //       legend_data[key]['measure'],
-  //     ];
-
-  //     legend.className = classes.join(' ');
-
-  //     legend_title.className = "dataTitle";
-  //     legend_title.innerHTML = legend_data[key].title;
-
-  //     legend.appendChild(legend_title);
-      
-
-  //     for (let i = 0; i < legend_data[key].entries.length; i++) {
-  //       let item = document.createElement('li');
-  //       let color = document.createElement('span');
-  //       let text = document.createElement('span');
-
-  //       color.className = 'keycolor';
-  //       // color.style.backgroundColor = legend_colors[i];
-
-  //       text.innerHTML = legend_data[key].entries[i];
-
-  //       item.appendChild(color);
-  //       item.appendChild(text);
-
-  //       legend.appendChild(item);
-  //     }
-
-  //     master_legends_item.appendChild(legend);
-  //     master_legend.appendChild(master_legends_item);
-  //   }
-  // }
-
-}( window.Georgia = window.Georgia || {} ));
-
-
