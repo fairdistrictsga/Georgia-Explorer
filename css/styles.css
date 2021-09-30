@@ -19,16 +19,38 @@ body {
 	}
 }
 
+#logo {
+	position: absolute;
+    right: 15px;
+    height: 80px;
+    left: auto;
+    top: 10px;
+    bottom: auto;
+    z-index: 100;
+}
+
+@media (max-width: 985px) { 
+	#logo {
+		top: auto;
+	    bottom: 35px;
+	    z-index: 99999;
+	    left: auto;
+	    right: 5px;
+	    height: 60px;
+	}
+
+}
+
 #map { 
 	position:absolute; 
-	top:38px; 
+	top:100px; 
 	bottom:0; 
 	width:100%; 
 }
 
 @media (max-width: 785px) {
 	#map { 
-		top:85px;
+		top:145px;
 	}
 }
 
@@ -41,13 +63,32 @@ body {
 
 div#new-controls {
 	position: absolute;
+	width: 80%;
     top: 8px;
     left: 50px;
     z-index: 100;
+    font-size: 1.2em;
+    font-family: "Arial";
     @include b3breakpoint(sm, desktop-first) {
     	top: 5px;
-    	// left: 40px;
     }
+}
+
+@media (max-width: 785px) {
+	div#new-controls { 
+		left: 5px;
+		width: 100%;
+	}
+}
+
+div.toggle {
+	display: inline-block;
+}
+
+@media (max-width: 785px) {
+	div.toggle {
+		margin-bottom: -3px;
+	}
 }
 
 
@@ -123,39 +164,49 @@ LEGEND STYLING*/
 	display: block;
     height: auto;
     padding-right: 0;
-    font-size: 14px;
+    font-size: 18px;
     /*width: 290px;*/
     position: absolute;
     left: 10px;
-    bottom: 8%;
+    bottom: 4%;
     top: auto;
     /*background: #fff;*/
     z-index: 101;
 }
 
-@media (max-height: 400px) {
+/*@media (max-width: 785px) {
 	#legendcontainer {
 	    width: 250px;
 	    bottom: 30px;
 	}
-}
+}*/
 
 #legend-ui li {
 	list-style-type: none;
 	/* padding-left: 5px;*/
 	/*font: 14px 'Helvetica Neue', sans-serif;*/
-	font:14px "Helvetica";
+	/*font:14px "Helvetica";*/
 	/* display: inline-table; */
 	text-align: center;
 	vertical-align: middle;
 	color:#29315F;
 	}
 
+/*stupid way to remove key color padding*/
+li.dataTitle span.keycolor {
+	width: 0px !important;
+    margin: 0 !important;
+}
+
 @media (max-width: 785px) {
 	#legend-ui li {
 		font:12px "Helvetica";
 		color:#29315F;
 		}
+	ul.legend {
+		width: 165px;
+	}
+
 	}
 
 	ul#legend-ui {
@@ -186,32 +237,51 @@ LEGEND STYLING*/
 
 	li.dataTitle {
 	padding-bottom: 5px;
-	margin-left: -15px;
+	/*margin-left: -15px;*/
 	text-decoration: none;
 	color: #000000;
 	font-weight: 700;
 	}
 
-
-	ul.legend li.bvap1 span.keycolor {
-	background-color:#f2f0f7;
+	#legend-ui {
+		display: none;
 	}
 
-	ul.legend li.bvap2 span.keycolor {
-	background-color:#cbc9e2;
+	#legend-ui li ul.legend li {
+		display: none;
 	}
 
-	ul.legend li.bvap3 span.keycolor {
-	background-color:#9c7dc4;
-	}
 
-	ul.legend li.bvap4 span.keycolor {
-	background-color:#7d52b7;
-	}
+	ul.legend li.bvap1 span.keycolor { background-color: #f2f0f7; }
+	ul.legend li.bvap2 span.keycolor { background-color: #cbc9e2; }
+	ul.legend li.bvap3 span.keycolor { background-color: #9c7dc4; }
+	ul.legend li.bvap4 span.keycolor { background-color: #7d52b7; }
+	ul.legend li.bvap5 span.keycolor { background-color: #54278f; }
 
-	ul.legend li.bvap5 span.keycolor {
-	background-color:#54278f;
-	}
+	ul.legend li.hvap1 span.keycolor { background-color: #feedde; }
+	ul.legend li.hvap2 span.keycolor { background-color: #fdbe85; }
+	ul.legend li.hvap3 span.keycolor { background-color: #fd8d3c; }
+	ul.legend li.hvap4 span.keycolor { background-color: #e6550d; }
+	ul.legend li.hvap5 span.keycolor { background-color: #a63603; }
+
+	ul.legend li.avap1 span.keycolor { background-color: #edf8e9; }
+	ul.legend li.avap2 span.keycolor { background-color: #bae4b3; }
+	ul.legend li.avap3 span.keycolor { background-color: #74c476; }
+	ul.legend li.avap4 span.keycolor { background-color: #31a354; }
+	ul.legend li.avap5 span.keycolor { background-color: #006d2c; }
+
+	ul.legend li.bipocvap1 span.keycolor { background-color: #feebe2; }
+	ul.legend li.bipocvap2 span.keycolor { background-color: #fbb4b9; }
+	ul.legend li.bipocvap3 span.keycolor { background-color: #f768a1; }
+	ul.legend li.bipocvap4 span.keycolor { background-color: #c51b8a; }
+	ul.legend li.bipocvap5 span.keycolor { background-color: #7a0177; }
+
+	ul.legend li.precinct_plean1 span.keycolor { background-color: #c23a43; }
+	ul.legend li.precinct_plean2 span.keycolor { background-color: #ed6d78; }
+	ul.legend li.precinct_plean3 span.keycolor { background-color: #c991b1; }
+	ul.legend li.precinct_plean4 span.keycolor { background-color: #979cde; }
+	ul.legend li.precinct_plean5 span.keycolor { background-color: #5a83c4; }
+	ul.legend li.precinct_plean6 span.keycolor { background-color: #3b61b8; }
 
 /*Legend styling for hidden legend*/
 
@@ -317,7 +387,7 @@ LEGEND STYLING*/
 .mapboxgl-popup {
     width: 1000px;
     /*font: 14px/20px 'Helvetica Neue', Arial, Helvetica, sans-serif;*/
-    font:14px/20px "Helvetica";
+    font:16px/20px "Helvetica";
   	min-width: 1000px;
   	/*overflow: auto;*/
   	color:#29315F;
@@ -397,17 +467,19 @@ LEGEND STYLING*/
 
 #sidebar {
     position: absolute;
-    top: 95px;
-    border-radius: 7px;
-    right: 50px;
+    top: 154px;
+    border-radius: 4px;
+    right: 47px;
     left: auto;
-    max-width: 400px;
+    max-width: 410px;
     overflow: auto;
     flex-wrap: wrap;
-    padding-left: 10px;
+    padding: 10px;
     background: rgba(255, 255, 255, 0.8);
-    font:16px/20px "Helvetica";
-    color:#29315F;
+    font: 18px/18px "Helvetica", "Arial", "sans-serif";
+    color: #29315F;
+    box-shadow: 0 0 0 2px rgb(0 0 0 / 10%);
+    line-height: 1.25em !important;
 }
 
 #tooltip {
@@ -455,7 +527,7 @@ LEGEND STYLING*/
 .mapboxgl-ctrl-geocoder.mapboxgl-ctrl{
 	/*float:left;*/
     font: inherit;
-    height: 40px;
+    height: 36px;
     color: #404040;
     color: rgba(0, 0, 0, 0.75);
     text-overflow: ellipsis;

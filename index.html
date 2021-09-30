@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <!-- this is what shows on hover in the tab -->
-    <title>Georgia</title>
+    <title>Fair Districts GA</title>
     <!-- these three should always be glued to the top -->
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -12,9 +12,9 @@
     <meta name="keywords" content="keywords, are, fantastic" />
 
     <!-- favicon -->
-    <!--  <link rel="icon" 
+     <link rel="icon" 
       type="image/png" 
-      href="http://example.com/myicon.png"> -->
+      href="img/FairDistrictsGA_icon.png">
 
     <!-- google font example -->
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Lato:400,300,100" />
@@ -38,46 +38,57 @@
 <!-- MARKUP GOES HERE -->
 
 <main class="interactive">
-<!-- <div id = 'title'>
-  <h1>Georgia</h1>
-</div> -->
-
+  <a href="https://www.fairdistrictsga.org/"><img src="img/fdga_logo.png" alt="FDGA" id="logo"></a>
+<!--   <img id="logo" src="img/fdga_logo.png"> -->
   <div id="map"></div>
 
   <!-- dropdowns -->
   <div id="new-controls">
     <select class='search-buttons' id="level" title="Select the political boundary">
+      <option value="" disabled="true">Select the political boundary</option>
       <option value="senate">State Senate, current</option>
-      <option value="house">State House, current</option>
+      <option value="house" selected>State House, current</option>
       <option value="congress">US Congress, current</option>
-     <!--  <option value="senate21">State Senate, proposed</option>
-      <option value="house21">State House, proposed</option>
-      <option value="congress21">US Congress, proposed</option> -->
+      <option value="congress_proposed">US Congress, proposed 9/27/2021</option>
+      <!-- <option value="senate_proposed" disabled="true">State Senate, proposed</option>
+      <option value="house_proposed" disabled="true">State House, proposed</option>
+      <option value="congress_proposed" disabled="true">US Congress, proposed</option> -->
     </select>
     <select class='search-buttons' id="measure" title="Select the background to display">
-      <option>2020 US Census Demographics</option> <!-- make this a header, not an option -->
-      <option value="bvap">-- Percent Black Voting Age Population</option>
+      <option value="" disabled="true">Select the background to display</option>
+      <option value="streets">Streets Background Layer</option>
+      <option disabled>2020 US Census Demographics</option> <!-- make this a header, not an option -->
+      <option value="bvap" selected>-- Percent Black Voting Age Population</option>
       <option value="hvap">-- Percent Hispanic Voting Age Population</option>
       <option value="avap">-- Percent Asian Voting Age Population</option>
       <option value="bipocvap">-- Percent Minority Voting Age Population</option>
-      <option>Election Results by precinct</option> <!-- make this a header, not an option -->
-      <option value="plean1821">-- Partisan Lean, 2018-2021</option>
+      <option disabled>Election Results by precinct</option> <!-- make this a header, not an option -->
+      <option value="precinct_plean">-- Partisan Lean, 2018-2021</option>
 <!--       <option value="ussr21">-- US Senate (Loeffler/Warnock), 2021</option>
       <option value="p20">-- President, 2020</option>
       <option value="g18">-- Governor, 2018</option> -->
-      <option value="streets">Streets</option>
     </select>
-    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-    <label class="form-check-label" for="flexCheckDefault">
-      Show data at district-level
-    </label>
-    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-    <label class="form-check-label" for="flexCheckDefault">
-      Show city boundaries
-    </label>
+    <div class="toggle">
+      <input class="form-check-input" type="checkbox" value="" id="show_district">
+      <label class="form-check-label" for="show_district">
+        Show data at district-level
+      </label>
+    </div>
+    <div class="toggle">
+      <input class="form-check-input" type="checkbox" value="" id="show_city">
+      <label class="form-check-label" for="show_city">
+        Show city boundaries
+      </label>
+    </div>
+    <div class="toggle">
+      <input class="form-check-input" type="checkbox" value="" id="show_county">
+      <label class="form-check-label" for="show_county">
+        Show county boundaries
+      </label>
+    </div>
   </div>
 
-  <div id='sidebar'>
+  <div id='sidebar' style="display: none;">
       <div id='tooltip'></div>
   </div>
 
@@ -85,9 +96,13 @@
     <ul id="legend-ui"></ul>
   </div>
 
+  <!-- <div id="legend-container">
+    <ul id="ga-legends" class="map-legend-overlay"></ul>
+  </div>
+
   <div id="legendcontainer_isolated" style="display: none;">
     <ul id="legend-ui_isolated"></ul>
-  </div>
+  </div> -->
 </main>
 
 <!-- j-query & bootsrap-->
@@ -102,6 +117,10 @@
 <!-- project js, change versions if you have trouble getting the browser to load changes-->
 <script src="js/sources.layers.js"></script>
 <script src="js/main.js?v=4.4"></script>
+
+<script>
+  Georgia.init();
+</script>
 
 </body>
 </html>

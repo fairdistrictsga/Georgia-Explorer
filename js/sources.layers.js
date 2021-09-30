@@ -4,10 +4,10 @@
   	 * @type {Object}
   	 */
   	sources = {
-  		'src_states': {
-  			type: 'geojson',
-        data: 'data/states.json'
-  		},
+  	 //  'src_states': {
+  		// type: 'geojson',
+    //     data: 'data/states.json'
+  	 //  },
       'src_house': {
         type:'geojson',
         data:'data/house15_census20.geojson'
@@ -20,9 +20,17 @@
         type:'geojson',
         data:'data/congress12_census20.geojson'
       },
+      'src_congress_proposed': {
+        type:'geojson',
+        data:'data/congress21_census20.geojson'
+      },
       'src_cities': {
         type:'geojson',
         data:'data/places_2020data.geojson'
+      },
+      'src_counties': {
+        type:'geojson',
+        data:'data/county.geojson'
       },
       'src_tract': {
         type: 'vector',
@@ -44,26 +52,44 @@
   	 * @type {Array}
   	 */
   	layers = [
-      // state borders
+      //county borders
       {
-        'id': 'state_borders',
+        'id': 'county_borders',
         'type': 'line',
-        'source': 'src_states',
-        'layout': {},
+        'source': 'src_counties',
+        'layout': {
+            'visibility': 'none'
+        },
         'paint': {
-          'line-color': '#000000',
+          'line-color': '#969696',
+          'line-width': 1
+        }
+      },
+      //city boundaries
+      {
+        'id': 'city_borders',
+        'type': 'line',
+        'source': 'src_cities',
+        'layout': {
+            'visibility': 'none'
+        },
+        'paint': {
+          'line-color': '#0AB2BB',
           'line-width': 1.5
         }
       },
-      // state borders
       {
-        'id': 'cities',
-        'type': 'line',
+        'id': 'city_borders_fill',
+        'type': 'fill',
         'source': 'src_cities',
-        'layout': {},
+        'minzoom': 11,
+        'layout': {
+            'visibility': 'none'
+        },
         'paint': {
-          'line-color': '#705f1f',
-          'line-width': 2
+          'fill-outline-color': '#0AB2BB',
+          'fill-color': '#0AB2BB',
+          'fill-opacity' : 0.1
         }
       },
       ////////////////////////////////
@@ -89,7 +115,7 @@
           'visibility': 'none'
         },
         'paint': {
-            "fill-opacity": 0
+            "fill-opacity": 1
             }
       },
       {
@@ -137,7 +163,7 @@
           'visibility': 'none'
         },
         'paint': {
-            "fill-opacity": 0
+            "fill-opacity": 1
             }
       },
       {
@@ -185,7 +211,7 @@
           'visibility': 'none'
         },
         'paint': {
-            "fill-opacity": 0
+            "fill-opacity": 1
             }
       },
       {
@@ -210,6 +236,54 @@
             "fill-opacity": 0
             }
       },
+      //////////////////////////////////////
+      // CONGRESS PROPOSED DISTRICS, 2010 //
+      /////////////////////////////////////
+      {
+        'id': 'congress_proposed',
+        'source': 'src_congress_proposed',
+        'type': 'line',
+        'layout': {
+            'visibility': 'none'
+        },
+        'paint': {
+          'line-color': "#750505",
+          'line-width': 2
+        }
+      },
+      {
+        'id': 'congress_proposed_fill',
+        'source': 'src_congress_proposed',
+        'type': 'fill',
+        'layout': {
+          'visibility': 'none'
+        },
+        'paint': {
+            "fill-opacity": 1
+            }
+      },
+      {
+        'id': 'congress_proposed_hover',
+        'source': 'src_congress_proposed',
+        'type': 'line',
+        'layout': {},
+        'paint': {
+          'line-color': "#c90000",
+          'line-width': 4
+        },
+        'filter': ["==", "DISTRICT", ""]
+      },
+      {
+        'id': 'congress_proposed_popup',
+        'source': 'src_congress_proposed',
+        'type': 'fill',
+        'layout': {
+          'visibility': 'visible'
+        },
+        'paint': {
+            "fill-opacity": 0
+            }
+      },
       ////////////////////////////////////////
       /// PRECINCTS - 2021 partisan lean /////
       ////////////////////////////////////////
@@ -218,7 +292,7 @@
         'type': 'fill',
         'source': 'src_precinct',
         'source-layer': 'precinct_2020-cw9lzx',
-        'maxzoom': 11,
+        // 'maxzoom': 11,
         "layout": {
               'visibility': "none"
             },
@@ -388,7 +462,7 @@
             },
             'paint': {
                 'fill-color': {
-                    property: 'pct_bvp',
+                    property: 'pct_bp_',
                     type: 'interval',
                     stops: [
                         [0, '#feebe2'],
@@ -402,7 +476,7 @@
                 },
                 'fill-opacity': .75,
                 'fill-outline-color': {
-                    property: 'pct_bvp',
+                    property: 'pct_bp_',
                     type: 'interval',
                     stops: [
                         [0, '#feebe2'],
