@@ -236,6 +236,7 @@ map.on("mousemove", "congress_proposed_popup", function(e) {
     if (features.length) {
 
         document.getElementById('tooltip').innerHTML = 
+        '<h3>' + '<strong>' + 'Map proposed by Senate Committee Chair, Sept. 27, 2021' + '</strong>' + '</h3>' +
         '<h3>' + '<strong>' + 'Proposed ' + '</strong>' + 'Congressional District ' + e.features[0].properties.district + '</h3>' +
                   'Population, 2020: ' + '<strong>' + e.features[0].properties.pop.toLocaleString("en-US") + '</strong>' +
         '</br>' + 'Voting Age Population (VAP), 2020: ' + '<strong>' + e.features[0].properties.tvap.toLocaleString("en-US") + '</strong>' +
@@ -265,6 +266,7 @@ map.on("mousemove", "congress_proposed_2_popup", function(e) {
     if (features.length) {
 
         document.getElementById('tooltip').innerHTML = 
+        '<h3>' + '<strong>' + 'Map proposed by House and Senate Democratic Caucuses, Oct. 21, 2021' + '</strong>' + '</h3>' +
         '<h3>' + '<strong>' + 'Proposed ' + '</strong>' + 'Congressional District ' + e.features[0].properties.district + '</h3>' +
                   'Population, 2020: ' + '<strong>' + e.features[0].properties.pop.toLocaleString("en-US") + '</strong>' +
         '</br>' + 'Voting Age Population (VAP), 2020: ' + '<strong>' + e.features[0].properties.tvap.toLocaleString("en-US") + '</strong>' +
