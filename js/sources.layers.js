@@ -16,6 +16,10 @@
         type:'geojson',
         data:'data/senate14_census20.geojson'
       },
+      'src_senate_p1': {
+        type:'geojson',
+        data:'data/senate_prop1_dem.geojson'
+      },
       'src_congress': {
         type:'geojson',
         data:'data/congress12_census20.geojson'
@@ -184,6 +188,54 @@
       {
         'id': 'senate_popup',
         'source': 'src_senate',
+        'type': 'fill',
+        'layout': {
+          'visibility': 'visible'
+        },
+        'paint': {
+            "fill-opacity": 0
+            }
+      },
+      /////////////////////////////////////////
+      // SENATE DISTRICS - PROPOSED 1, DEMS//
+      /////////////////////////////////////////
+      {
+        'id': 'senate_p1',
+        'source': 'src_senate_p1',
+        'type': 'line',
+        'layout': {
+            'visibility': 'visible'
+        },
+        'paint': {
+          'line-color': "#750505",
+          'line-width': 2
+        }
+      },
+      {
+        'id': 'senate_p1_fill',
+        'source': 'src_senate_p1',
+        'type': 'fill',
+        'layout': {
+          'visibility': 'none'
+        },
+        'paint': {
+            "fill-opacity": 1
+            }
+      },
+      {
+        'id': 'senate_p1_hover',
+        'source': 'src_senate_p1',
+        'type': 'line',
+        'layout': {},
+        'paint': {
+          'line-color': "#c90000",
+          'line-width': 4
+        },
+        'filter': ["==", "DISTRICT", ""]
+      },
+      {
+        'id': 'senate_p1_popup',
+        'source': 'src_senate_p1',
         'type': 'fill',
         'layout': {
           'visibility': 'visible'
