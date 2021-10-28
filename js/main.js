@@ -371,35 +371,34 @@ map.addControl(new mapboxgl.NavigationControl({
     var standardLegends = [
       [
         { title: 'Percent Black Voting-Age Population (2020)', id: 'bvapLegendTitle', class: 'bvapLegend dataTitle' },
-        { title: '0% to 20%', class: 'bvapLegend bvap1' },
-        { title: '20% to 40%', class: 'bvapLegend bvap2' },
-        { title: '40% to 60%', class: 'bvapLegend bvap3' },
-        { title: '60% to 80%', class: 'bvapLegend bvap4' },
-        { title: '80% to 100%', class: 'bvapLegend bvap5' }
+        { title: '0% to 25%', class: 'bvapLegend bvap1' },
+        { title: '25% to 50%', class: 'bvapLegend bvap2' },
+        { title: '50% to 75%', class: 'bvapLegend bvap3' },
+        { title: '75% to 100%', class: 'bvapLegend bvap4' }
       ],
       [
         { title: 'Percent Hispanic Voting-Age Population (2020)', id: 'hvapLegendTitle', class: 'hvapLegend dataTitle' },
-        { title: '0% to 20%', class: 'hvapLegend hvap1' },
-        { title: '20% to 40%', class: 'hvapLegend hvap2' },
-        { title: '40% to 60%', class: 'hvapLegend hvap3' },
-        { title: '60% to 80%', class: 'hvapLegend hvap4' },
-        { title: '80% to 100%', class: 'hvapLegend hvap5' }
+        { title: '0% to 25%', class: 'hvapLegend hvap1' },
+        { title: '25% to 50%', class: 'hvapLegend hvap2' },
+        { title: '50% to 75%', class: 'hvapLegend hvap3' },
+        { title: '75% to 100%', class: 'hvapLegend hvap4' }
+        // { title: '80% to 100%', class: 'hvapLegend hvap5' }
       ],
       [
         { title: 'Percent Asian Voting Age Population (2020)', id: 'avapLegendTitle', class: 'avapLegend dataTitle' },
-        { title: '0% to 20%', class: 'avapLegend avap1' },
-        { title: '20% to 40%', class: 'avapLegend avap2' },
-        { title: '40% to 60%', class: 'avapLegend avap3' },
-        { title: '60% to 80%', class: 'avapLegend avap4' },
-        { title: '80% to 100%', class: 'avapLegend avap5' }
+        { title: '0% to 25%', class: 'avapLegend avap1' },
+        { title: '25% to 50%', class: 'avapLegend avap2' },
+        { title: '50% to 75%', class: 'avapLegend avap3' },
+        { title: '75% to 100%', class: 'avapLegend avap4' }
+        // { title: '80% to 100%', class: 'avapLegend avap5' }
       ],
       [
         { title: 'Percent Minority Voting Age Population (2020)', id: 'bipocvapLegendTitle', class: 'bipocvapLegend dataTitle' },
-        { title: '0% to 20%', class: 'bipocvapLegend bipocvap1' },
-        { title: '20% to 40%', class: 'bipocvapLegend bipocvap2' },
-        { title: '40% to 60%', class: 'bipocvapLegend bipocvap3' },
-        { title: '60% to 80%', class: 'bipocvapLegend bipocvap4' },
-        { title: '80% to 100%', class: 'bipocvapLegend bipocvap5' }
+        { title: '0% to 25%', class: 'bipocvapLegend bipocvap1' },
+        { title: '25% to 50%', class: 'bipocvapLegend bipocvap2' },
+        { title: '50% to 75%', class: 'bipocvapLegend bipocvap3' },
+        { title: '75% to 100%', class: 'bipocvapLegend bipocvap4' }
+        // { title: '80% to 100%', class: 'bipocvapLegend bipocvap5' }
       ],
       [
         { title: 'Partisan Lean, Percent Democrat (2018-2021)', id: 'precinct_pleanLegendTitle', class: 'precinct_pleanLegend dataTitle' },
@@ -547,72 +546,64 @@ map.addControl(new mapboxgl.NavigationControl({
     'pct_bvp': {
       'fill': [
         [0, '#f2f0f7'],
-        [0.195, '#cbc9e2'],
-        [0.395, '#9c7dc4'],
-        [0.595, '#7d52b7'],
-        [0.795, '#54278f'],
+        [0.249, '#aba8d0'],
+        [0.495, '#865ebc'],
+        [0.749, '#54278f'],
         [1.1, '#d4d5d5']
       ],
       'outline': [
         [0, '#f2f0f7'],
-        [0.195, '#cbc9e2'],
-        [0.395, '#9c7dc4'],
-        [0.595, '#7d52b7'],
-        [0.795, '#54278f'],
+        [0.249, '#aba8d0'],
+        [0.499, '#865ebc'],
+        [0.749, '#54278f'],
         [1.1, '#d4d5d5']
       ]
     },
     'pct_hvp': {
       'fill': [
         [0, '#feedde'],
-        [0.195, '#fdbe85'],
-        [0.395, '#fd8d3c'],
-        [0.595, '#e6550d'],
-        [0.795, '#a63603'],
+        [0.249, '#fdbe85'],
+        [0.499, '#e6550d'],
+        [0.749, '#a63603'],
         [1.1, '#d4d5d5']
       ],
       'outline': [
         [0, '#feedde'],
-        [0.195, '#fdbe85'],
-        [0.395, '#fd8d3c'],
-        [0.595, '#e6550d'],
-        [0.795, '#a63603'],
+        [0.249, '#fdbe85'],
+        [0.499, '#e6550d'],
+        [0.749, '#a63603'],
         [1.1, '#d4d5d5']
       ]
     },
     'pct_avp': {
       'fill': [
         [0, '#edf8e9'],
-        [0.195, '#bae4b3'],
-        [0.395, '#74c476'],
-        [0.595, '#31a354'],
-        [0.795, '#006d2c'],
+        [0.249, '#bae4b3'],
+        [0.499, '#31a354'],
+        [0.749, '#006d2c'],
         [1.1, '#d4d5d5']
       ],
       'outline': [
         [0, '#edf8e9'],
-        [0.195, '#bae4b3'],
-        [0.395, '#74c476'],
-        [0.595, '#31a354'],
-        [0.795, '#006d2c'],
+        [0.249, '#bae4b3'],
+        [0.499, '#31a354'],
+        [0.749, '#006d2c'],
         [1.1, '#d4d5d5']
       ]
     },
     'pct_bp_': {
       'fill': [
         [0, '#feebe2'],
-        [0.195, '#fbb4b9'],
-        [0.395, '#f768a1'],
-        [0.595, '#c51b8a'],
-        [0.795, '#7a0177'],
+        [0.249, '#fcc0c4'],
+        [0.499, '#d64ba5'],
+        [0.749, '#91318f'],
         [1.1, '#d4d5d5']
       ],
       'outline': [
         [0, '#feebe2'],
-        [0.195, '#fbb4b9'],
-        [0.395, '#f768a1'],
-        [0.595, '#c51b8a'],
-        [0.795, '#7a0177'],
+        [0.249, '#fcc0c4'],
+        [0.499, '#d64ba5'],
+        [0.749, '#91318f'],
         [1.1, '#d4d5d5']
       ]
     },

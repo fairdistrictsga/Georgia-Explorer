@@ -398,28 +398,27 @@
                     type: 'interval',
                     stops: [
                         [0, '#f2f0f7'],
-                        [0.195, '#cbc9e2'],
-                        [0.395, '#9c7dc4'],
-                        [0.595, '#7d52b7'],
-                        [0.795, '#54278f'],
+                        [0.249, '#aba8d0'],
+                        [0.499, '#865ebc'],
+                        [0.749, '#54278f'],
                         [1.1, '#d4d5d5']
                     ],
                     default: 'rgba(0, 0, 0, 0)'
                 },
-                'fill-opacity': .75,
-                'fill-outline-color': {
-                    property: 'pct_bvp',
-                    type: 'interval',
-                    stops: [
-                        [0, '#f2f0f7'],
-                        [0.195, '#cbc9e2'],
-                        [0.395, '#9c7dc4'],
-                        [0.595, '#7d52b7'],
-                        [0.795, '#54278f'],
-                        [1.1, '#d4d5d5']
-                    ],
-                    default: 'rgba(0, 0, 0, 0)'
-                }
+                'fill-opacity': .75
+                // 'fill-outline-color': {
+                //     property: 'pct_bvp',
+                //     type: 'interval',
+                //     stops: [
+                //         [0, '#f2f0f7'],
+                //         [0.195, '#cbc9e2'],
+                //         [0.395, '#9c7dc4'],
+                //         [0.595, '#7d52b7'],
+                //         [0.795, '#54278f'],
+                //         [1.1, '#d4d5d5']
+                //     ],
+                //     default: 'rgba(0, 0, 0, 0)'
+                // }
             }
       },
       {
@@ -437,28 +436,27 @@
                     type: 'interval',
                     stops: [
                         [0, '#f2f0f7'],
-                        [0.195, '#cbc9e2'],
-                        [0.395, '#9c7dc4'],
-                        [0.595, '#7d52b7'],
-                        [0.795, '#54278f'],
+                        [0.249, '#aba8d0'],
+                        [0.499, '#865ebc'],
+                        [0.749, '#54278f'],
                         [1.1, '#d4d5d5']
                     ],
                     default: 'rgba(0, 0, 0, 0)'
                 },
-                'fill-opacity': .75,
-                'fill-outline-color': {
-                    property: 'pct_bvp',
-                    type: 'interval',
-                    stops: [
-                        [0, '#f2f0f7'],
-                        [0.195, '#cbc9e2'],
-                        [0.395, '#bba5d6'],
-                        [0.595, '#a48cc2'],
-                        [0.795, '#744ca8'],
-                        [1.1, '#d4d5d5']
-                    ],
-                    default: 'rgba(0, 0, 0, 0)'
-                }
+                'fill-opacity': .75
+                // 'fill-outline-color': {
+                //     property: 'pct_bvp',
+                //     type: 'interval',
+                //     stops: [
+                //         [0, '#f2f0f7'],
+                //         [0.195, '#cbc9e2'],
+                //         [0.395, '#bba5d6'],
+                //         [0.595, '#a48cc2'],
+                //         [0.795, '#744ca8'],
+                //         [1.1, '#d4d5d5']
+                //     ],
+                //     default: 'rgba(0, 0, 0, 0)'
+                // }
             }
       },
       ////////////////////////////////
@@ -479,28 +477,27 @@
                     type: 'interval',
                     stops: [
                         [0, '#feebe2'],
-                        [0.195, '#fbb4b9'],
-                        [0.395, '#f768a1'],
-                        [0.595, '#c51b8a'],
-                        [0.795, '#7a0177'],
+                        [0.249, '#fcc0c4'],
+                        [0.499, '#d64ba5'],
+                        [0.749, '#91318f'],
                         [1.1, '#d4d5d5']
                     ],
                     default: 'rgba(0, 0, 0, 0)'
                 },
-                'fill-opacity': .75,
-                'fill-outline-color': {
-                    property: 'pct_bp_',
-                    type: 'interval',
-                    stops: [
-                        [0, '#feebe2'],
-                        [0.195, '#fcc0c4'],
-                        [0.395, '#fc88b7'],
-                        [0.595, '#d64ba5'],
-                        [0.795, '#91318f'],
-                        [1.1, '#d4d5d5']
-                    ],
-                    default: 'rgba(0, 0, 0, 0)'
-                }
+                'fill-opacity': .75
+                // 'fill-outline-color': {
+                //     property: 'pct_bp_',
+                //     type: 'interval',
+                //     stops: [
+                //         [0, '#feebe2'],
+                //         [0.195, '#fcc0c4'],
+                //         [0.395, '#fc88b7'],
+                //         [0.595, '#d64ba5'],
+                //         [0.795, '#91318f'],
+                //         [1.1, '#d4d5d5']
+                //     ],
+                //     default: 'rgba(0, 0, 0, 0)'
+                // }
             }
       },
       {
@@ -518,28 +515,26 @@
                     type: 'interval',
                     stops: [
                         [0, '#feebe2'],
-                        [0.195, '#fbb4b9'],
-                        [0.395, '#f768a1'],
-                        [0.595, '#c51b8a'],
-                        [0.795, '#7a0177'],
+                        [0.249, '#fcc0c4'],
+                        [0.499, '#d64ba5'],
+                        [0.749, '#91318f'],
                         [1.1, '#d4d5d5']
                     ],
                     default: 'rgba(0, 0, 0, 0)'
                 },
-                'fill-opacity': .75,
-                'fill-outline-color': {
-                    property: 'pct_bp_',
-                    type: 'interval',
-                    stops: [
-                        [0, '#feebe2'],
-                        [0.195, '#fcc0c4'],
-                        [0.395, '#fc88b7'],
-                        [0.595, '#d64ba5'],
-                        [0.795, '#91318f'],
-                        [1.1, '#d4d5d5']
-                    ],
-                    default: 'rgba(0, 0, 0, 0)'
-                }
+                'fill-opacity': .75
+                // 'fill-outline-color': {
+                //     property: 'pct_bp_',
+                //     type: 'interval',
+                //     stops: [
+                //         [0, '#feebe2'],
+                //         [0.249, '#fcc0c4'],
+                //         [0.499, '#d64ba5'],
+                //         [0.749, '#91318f'],
+                //         [1.1, '#d4d5d5']
+                //     ],
+                //     default: 'rgba(0, 0, 0, 0)'
+                // }
             }
       },
       ////////////////////////////////
@@ -559,17 +554,16 @@
                     property: 'pct_avp',
                     type: 'interval',
                     stops: [
-                        [0, '#edf8e9'],
-                        [0.195, '#bae4b3'],
-                        [0.395, '#74c476'],
-                        [0.595, '#31a354'],
-                        [0.795, '#006d2c'],
-                        [1.1, '#d4d5d5']
+                      [0, '#edf8e9'],
+                      [0.249, '#bae4b3'],
+                      [0.499, '#31a354'],
+                      [0.749, '#006d2c'],
+                      [1.1, '#d4d5d5']
                     ],
                     default: 'rgba(0, 0, 0, 0)'
                 },
-                'fill-opacity': .75,
-                'fill-outline-color': '#F0F8EC'
+                'fill-opacity': .75
+                // 'fill-outline-color': '#F0F8EC'
             }
       },
       {
@@ -587,16 +581,15 @@
                     type: 'interval',
                     stops: [
                         [0, '#edf8e9'],
-                        [0.195, '#bae4b3'],
-                        [0.395, '#74c476'],
-                        [0.595, '#31a354'],
-                        [0.795, '#006d2c'],
+                        [0.249, '#bae4b3'],
+                        [0.499, '#31a354'],
+                        [0.749, '#006d2c'],
                         [1.1, '#d4d5d5']
                     ],
                     default: 'rgba(0, 0, 0, 0)'
                 },
-                'fill-opacity': .75,
-                'fill-outline-color': '#F0F8EC'
+                'fill-opacity': .75
+                // 'fill-outline-color': '#F0F8EC'
             }
       },
       ////////////////////////////////
@@ -617,16 +610,15 @@
                     type: 'interval',
                     stops: [
                         [0, '#feedde'],
-                        [0.195, '#fdbe85'],
-                        [0.395, '#fd8d3c'],
-                        [0.595, '#e6550d'],
-                        [0.795, '#a63603'],
+                        [0.249, '#fdbe85'],
+                        [0.499, '#e6550d'],
+                        [0.749, '#a63603'],
                         [1.1, '#d4d5d5']
                     ],
                     default: 'rgba(0, 0, 0, 0)'
                 },
-                'fill-opacity': .75,
-                'fill-outline-color': '#feedde'
+                'fill-opacity': .75
+                // 'fill-outline-color': '#feedde'
             }
       },
       {
@@ -644,16 +636,15 @@
                     type: 'interval',
                     stops: [
                         [0, '#feedde'],
-                        [0.195, '#fdbe85'],
-                        [0.395, '#fd8d3c'],
-                        [0.595, '#e6550d'],
-                        [0.795, '#a63603'],
+                        [0.249, '#fdbe85'],
+                        [0.499, '#e6550d'],
+                        [0.749, '#a63603'],
                         [1.1, '#d4d5d5']
                     ],
                     default: 'rgba(0, 0, 0, 0)'
                 },
-                'fill-opacity': .75,
-                'fill-outline-color': '#feedde'
+                'fill-opacity': .75
+                // 'fill-outline-color': '#feedde'
             }
       }
   	];

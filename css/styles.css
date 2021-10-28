@@ -251,30 +251,29 @@ li.dataTitle span.keycolor {
 		display: none;
 	}
 
-
 	ul.legend li.bvap1 span.keycolor { background-color: #f2f0f7; }
-	ul.legend li.bvap2 span.keycolor { background-color: #cbc9e2; }
-	ul.legend li.bvap3 span.keycolor { background-color: #9c7dc4; }
-	ul.legend li.bvap4 span.keycolor { background-color: #7d52b7; }
-	ul.legend li.bvap5 span.keycolor { background-color: #54278f; }
+	ul.legend li.bvap2 span.keycolor { background-color: #aba8d0; }
+	ul.legend li.bvap3 span.keycolor { background-color: #865ebc; }
+	ul.legend li.bvap4 span.keycolor { background-color: #54278f; }
+/*	ul.legend li.bvap5 span.keycolor { background-color: #54278f; }*/
 
 	ul.legend li.hvap1 span.keycolor { background-color: #feedde; }
 	ul.legend li.hvap2 span.keycolor { background-color: #fdbe85; }
-	ul.legend li.hvap3 span.keycolor { background-color: #fd8d3c; }
-	ul.legend li.hvap4 span.keycolor { background-color: #e6550d; }
-	ul.legend li.hvap5 span.keycolor { background-color: #a63603; }
+/*	ul.legend li.hvap3 span.keycolor { background-color: #fd8d3c; }*/
+	ul.legend li.hvap3 span.keycolor { background-color: #e6550d; }
+	ul.legend li.hvap4 span.keycolor { background-color: #a63603; }
 
 	ul.legend li.avap1 span.keycolor { background-color: #edf8e9; }
 	ul.legend li.avap2 span.keycolor { background-color: #bae4b3; }
-	ul.legend li.avap3 span.keycolor { background-color: #74c476; }
-	ul.legend li.avap4 span.keycolor { background-color: #31a354; }
-	ul.legend li.avap5 span.keycolor { background-color: #006d2c; }
+/*	ul.legend li.avap3 span.keycolor { background-color: #74c476; }*/
+	ul.legend li.avap3 span.keycolor { background-color: #31a354; }
+	ul.legend li.avap4 span.keycolor { background-color: #006d2c; }
 
 	ul.legend li.bipocvap1 span.keycolor { background-color: #feebe2; }
 	ul.legend li.bipocvap2 span.keycolor { background-color: #fbb4b9; }
-	ul.legend li.bipocvap3 span.keycolor { background-color: #f768a1; }
-	ul.legend li.bipocvap4 span.keycolor { background-color: #c51b8a; }
-	ul.legend li.bipocvap5 span.keycolor { background-color: #7a0177; }
+/*	ul.legend li.bipocvap3 span.keycolor { background-color: #f768a1; }*/
+	ul.legend li.bipocvap3 span.keycolor { background-color: #c51b8a; }
+	ul.legend li.bipocvap4 span.keycolor { background-color: #7a0177; }
 
 	ul.legend li.precinct_plean1 span.keycolor { background-color: #c23a43; }
 	ul.legend li.precinct_plean2 span.keycolor { background-color: #ed6d78; }
