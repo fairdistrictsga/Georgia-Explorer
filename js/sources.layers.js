@@ -12,6 +12,10 @@
         type:'geojson',
         data:'data/house15_census20.geojson'
       },
+      'src_house_p1': {
+        type:'geojson',
+        data:'data/house_prop1_dem.geojson'
+      },
       'src_senate': {
         type:'geojson',
         data:'data/senate14_census20.geojson'
@@ -140,6 +144,54 @@
       {
         'id': 'house_popup',
         'source': 'src_house',
+        'type': 'fill',
+        'layout': {
+          'visibility': 'visible'
+        },
+        'paint': {
+            "fill-opacity": 0
+            }
+      },
+      ////////////////////////////////
+      // HOUSE DISTRICS - Proposed DEM //
+      ////////////////////////////////
+      {
+        'id': 'house_p1',
+        'source': 'src_house_p1',
+        'type': 'line',
+        'layout': {
+            'visibility': 'none'
+        },
+        'paint': {
+          'line-color': "#750505",
+          'line-width': 2
+        }
+      },
+      {
+        'id': 'house_p1_fill',
+        'source': 'src_house_p1',
+        'type': 'fill',
+        'layout': {
+          'visibility': 'none'
+        },
+        'paint': {
+            "fill-opacity": 1
+            }
+      },
+      {
+        'id': 'house_p1_hover',
+        'source': 'src_house_p1',
+        'type': 'line',
+        'layout': {},
+        'paint': {
+          'line-color': "#c90000",
+          'line-width': 4
+        },
+        'filter': ["==", "DISTRICT", ""]
+      },
+      {
+        'id': 'house_p1_popup',
+        'source': 'src_house_p1',
         'type': 'fill',
         'layout': {
           'visibility': 'visible'
