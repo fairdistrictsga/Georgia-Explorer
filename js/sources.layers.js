@@ -16,6 +16,10 @@
         type:'geojson',
         data:'data/house_prop1_dem.geojson'
       },
+      'src_house_p2r': {
+        type:'geojson',
+        data:'data/house_prop2_rep.geojson'
+      },
       'src_senate': {
         type:'geojson',
         data:'data/senate14_census20.geojson'
@@ -192,6 +196,54 @@
       {
         'id': 'house_p1_popup',
         'source': 'src_house_p1',
+        'type': 'fill',
+        'layout': {
+          'visibility': 'visible'
+        },
+        'paint': {
+            "fill-opacity": 0
+            }
+      },
+      ////////////////////////////////
+      // HOUSE DISTRICS - Proposed REP //
+      ////////////////////////////////
+      {
+        'id': 'house_p2',
+        'source': 'src_house_p2r',
+        'type': 'line',
+        'layout': {
+            'visibility': 'none'
+        },
+        'paint': {
+          'line-color': "#750505",
+          'line-width': 2
+        }
+      },
+      {
+        'id': 'house_p2_fill',
+        'source': 'src_house_p2r',
+        'type': 'fill',
+        'layout': {
+          'visibility': 'none'
+        },
+        'paint': {
+            "fill-opacity": 1
+            }
+      },
+      {
+        'id': 'house_p2_hover',
+        'source': 'src_house_p2r',
+        'type': 'line',
+        'layout': {},
+        'paint': {
+          'line-color': "#c90000",
+          'line-width': 4
+        },
+        'filter': ["==", "DISTRICT", ""]
+      },
+      {
+        'id': 'house_p2_popup',
+        'source': 'src_house_p2r',
         'type': 'fill',
         'layout': {
           'visibility': 'visible'
