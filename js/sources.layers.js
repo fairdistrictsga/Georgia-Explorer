@@ -32,6 +32,10 @@
         type:'geojson',
         data:'data/senate_prop2_rep.geojson'
       },
+      'src_senate_p3': {
+        type:'geojson',
+        data:'data/senate_prop3_rep.geojson'
+      },
       'src_congress': {
         type:'geojson',
         data:'data/congress12_census20.geojson'
@@ -393,6 +397,54 @@
       {
         'id': 'senate_p2_popup',
         'source': 'src_senate_p2',
+        'type': 'fill',
+        'layout': {
+          'visibility': 'visible'
+        },
+        'paint': {
+            "fill-opacity": 0
+            }
+      },
+      /////////////////////////////////////////
+      // SENATE DISTRICS - PROPOSED 3, REPS//
+      /////////////////////////////////////////
+      {
+        'id': 'senate_p3',
+        'source': 'src_senate_p3',
+        'type': 'line',
+        'layout': {
+            'visibility': 'visible'
+        },
+        'paint': {
+          'line-color': "#750505",
+          'line-width': 2
+        }
+      },
+      {
+        'id': 'senate_p3_fill',
+        'source': 'src_senate_p3',
+        'type': 'fill',
+        'layout': {
+          'visibility': 'none'
+        },
+        'paint': {
+            "fill-opacity": 1
+            }
+      },
+      {
+        'id': 'senate_p3_hover',
+        'source': 'src_senate_p3',
+        'type': 'line',
+        'layout': {},
+        'paint': {
+          'line-color': "#c90000",
+          'line-width': 4
+        },
+        'filter': ["==", "DISTRICT", ""]
+      },
+      {
+        'id': 'senate_p3_popup',
+        'source': 'src_senate_p3',
         'type': 'fill',
         'layout': {
           'visibility': 'visible'

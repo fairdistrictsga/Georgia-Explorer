@@ -157,7 +157,7 @@ map.on("mousemove", "senate_popup", function(e) {
         '</br>' + 'Percent Hispanic VAP: ' + '<strong>' + (e.features[0].properties.pct_hvp * 100).toFixed() + '%' + '</strong>' +
         '</br>' + 'Percent Minority VAP: ' + '<strong>' + (e.features[0].properties.pct_bp_ * 100).toFixed() + '%' + '</strong>' +
         '</br>' + 'Partisan Lean, Percent Democrat 2018-21: ' + '<strong>' + (e.features[0].properties.partisan * 100).toFixed() + '%' + '</strong>' +
-        '</br>' + '<em>' + '* All population data are estimates based on voting precints' + '</em>';
+        '</br>' + '<em>' + '* All district populations are estimates based on voting precints' + '</em>';
     } else {
         document.getElementById('tooltip-name').innerHTML = "";
         document.getElementById('tooltip').innerHTML = "";
@@ -188,7 +188,7 @@ map.on("mousemove", "senate_p1_popup", function(e) {
         '</br>' + 'Percent Hispanic VAP: ' + '<strong>' + (e.features[0].properties.pct_hvp * 100).toFixed() + '%' + '</strong>' +
         '</br>' + 'Percent Minority VAP: ' + '<strong>' + (e.features[0].properties.pct_bp_ * 100).toFixed() + '%' + '</strong>' +
         '</br>' + 'Partisan Lean, Percent Democrat 2018-21: ' + '<strong>' + (e.features[0].properties.partisan * 100).toFixed() + '%' + '</strong>'+
-        '</br>' + '<em>' + '* All population data are estimates based on voting precints' + '</em>';
+        '</br>' + '<em>' + '* All district populations are estimates based on voting precints' + '</em>';
     } else {
         document.getElementById('tooltip-name').innerHTML = "";
         document.getElementById('tooltip').innerHTML = "";
@@ -219,7 +219,38 @@ map.on("mousemove", "senate_p2_popup", function(e) {
         '</br>' + 'Percent Hispanic VAP: ' + '<strong>' + (e.features[0].properties.pct_hvp * 100).toFixed() + '%' + '</strong>' +
         '</br>' + 'Percent Minority VAP: ' + '<strong>' + (e.features[0].properties.pct_bp_ * 100).toFixed() + '%' + '</strong>' +
         '</br>' + 'Partisan Lean, Percent Democrat 2018-21: ' + '<strong>' + (e.features[0].properties.partisan * 100).toFixed() + '%' + '</strong>'+
-        '</br>' + '<em>' + '* All population data are estimates based on voting precints' + '</em>';
+        '</br>' + '<em>' + '* All district populations are estimates based on voting precints' + '</em>';
+    } else {
+        document.getElementById('tooltip-name').innerHTML = "";
+        document.getElementById('tooltip').innerHTML = "";
+    }
+});
+
+map.on("mousemove", "senate_p3_popup", function(e) {
+  $('#sidebar').show();
+// create hover effect
+    map.setFilter("senate_p3_hover", ["==", "district", e.features[0].properties.district]);
+
+// change cursor to pointer
+    map.getCanvas().style.cursor = 'pointer';
+
+    var features = map.queryRenderedFeatures(e.point, {
+        layers: ["senate_p3_popup"]
+    });
+
+    if (features.length) {
+
+        document.getElementById('tooltip').innerHTML = 
+        '<h3>' + '<strong>' + 'Map proposed by Senate Committee Chair, Nov. 4, 2021 - Senate Bill 1EX' + '</strong>' + '</h3>' +
+        '<h3>' + '<strong>' + 'Proposed ' + '</strong>' + 'State Senate District ' + e.features[0].properties.district + '</h3>' +
+                  'Population, 2020: ' + '<strong>' + e.features[0].properties.pop.toLocaleString("en-US") + '</strong>' +
+        '</br>' + 'Voting Age Population (VAP), 2020: ' + '<strong>' + e.features[0].properties.tvap.toLocaleString("en-US") + '</strong>' +
+        '</br>' + 'Percent Black VAP: ' + '<strong>' + (e.features[0].properties.pct_bvp * 100).toFixed() + '%' + '</strong>' +
+        '</br>' + 'Percent Asian VAP: ' + '<strong>' + (e.features[0].properties.pct_avp * 100).toFixed() + '%' + '</strong>' +
+        '</br>' + 'Percent Hispanic VAP: ' + '<strong>' + (e.features[0].properties.pct_hvp * 100).toFixed() + '%' + '</strong>' +
+        '</br>' + 'Percent Minority VAP: ' + '<strong>' + (e.features[0].properties.pct_bp_ * 100).toFixed() + '%' + '</strong>' +
+        '</br>' + 'Partisan Lean, Percent Democrat 2018-21: ' + '<strong>' + (e.features[0].properties.partisan * 100).toFixed() + '%' + '</strong>'+
+        '</br>' + '<em>' + '* All district populations are estimates based on voting precints' + '</em>';
     } else {
         document.getElementById('tooltip-name').innerHTML = "";
         document.getElementById('tooltip').innerHTML = "";
@@ -249,7 +280,7 @@ map.on("mousemove", "house_popup", function(e) {
         '</br>' + 'Percent Hispanic VAP: ' + '<strong>' + (e.features[0].properties.pct_hvp * 100).toFixed() + '%' + '</strong>' +
         '</br>' + 'Percent Minority VAP: ' + '<strong>' + (e.features[0].properties.pct_bp_ * 100).toFixed() + '%' + '</strong>' +
         '</br>' + 'Partisan Lean, Percent Democrat 2018-21: ' + '<strong>' + (e.features[0].properties.partisan * 100).toFixed() + '%' + '</strong>'+
-        '</br>' + '<em>' + '* All population data are estimates based on voting precints' + '</em>';
+        '</br>' + '<em>' + '* All district populations are estimates based on voting precints' + '</em>';
     } else {
         document.getElementById('tooltip-name').innerHTML = "";
         document.getElementById('tooltip').innerHTML = "";
@@ -280,7 +311,7 @@ map.on("mousemove", "house_p1_popup", function(e) {
         '</br>' + 'Percent Hispanic VAP: ' + '<strong>' + (e.features[0].properties.pct_hvp * 100).toFixed() + '%' + '</strong>' +
         '</br>' + 'Percent Minority VAP: ' + '<strong>' + (e.features[0].properties.pct_bp_ * 100).toFixed() + '%' + '</strong>' +
         '</br>' + 'Partisan Lean, Percent Democrat 2018-21: ' + '<strong>' + (e.features[0].properties.partisan * 100).toFixed() + '%' + '</strong>'+
-        '</br>' + '<em>' + '* All population data are estimates based on voting precints' + '</em>';
+        '</br>' + '<em>' + '* All district populations are estimates based on voting precints' + '</em>';
     } else {
         document.getElementById('tooltip-name').innerHTML = "";
         document.getElementById('tooltip').innerHTML = "";
@@ -311,7 +342,7 @@ map.on("mousemove", "house_p2_popup", function(e) {
         '</br>' + 'Percent Hispanic VAP: ' + '<strong>' + (e.features[0].properties.pct_hvp * 100).toFixed() + '%' + '</strong>' +
         '</br>' + 'Percent Minority VAP: ' + '<strong>' + (e.features[0].properties.pct_bp_ * 100).toFixed() + '%' + '</strong>' +
         '</br>' + 'Partisan Lean, Percent Democrat 2018-21: ' + '<strong>' + (e.features[0].properties.partisan * 100).toFixed() + '%' + '</strong>'+
-        '</br>' + '<em>' + '* All population data are estimates based on voting precints' + '</em>';
+        '</br>' + '<em>' + '* All district populations are estimates based on voting precints' + '</em>';
     } else {
         document.getElementById('tooltip-name').innerHTML = "";
         document.getElementById('tooltip').innerHTML = "";
@@ -436,6 +467,17 @@ map.on("mouseleave", "senate_p1_popup", function() {
 map.on("mouseleave", "senate_p2_popup", function() {
 // remove hover color
     map.setFilter("senate_p2_hover", ["==", "district", ""]);
+// remove popup
+    popup.remove();  // make this work, and create a hover handler
+    document.getElementById('tooltip').innerHTML = "";
+    map.getCanvas().style.cursor = 'default';
+    $('#sidebar').hide();
+});
+
+// Reset the state-fills-hover layer's filter when the mouse leaves the layer.
+map.on("mouseleave", "senate_p3_popup", function() {
+// remove hover color
+    map.setFilter("senate_p3_hover", ["==", "district", ""]);
 // remove popup
     popup.remove();  // make this work, and create a hover handler
     document.getElementById('tooltip').innerHTML = "";
@@ -652,7 +694,7 @@ map.addControl(new mapboxgl.NavigationControl({
   // layers
 
   const leg_layers = [
-    'senate',   'senate_p1', 'senate_p2',
+    'senate',   'senate_p1', 'senate_p2', 'senate_p3',
     'house',    'house_p1', 'house_p2',
     'congress', 'congress_proposed',
     'congress_proposed_2'
@@ -667,14 +709,14 @@ map.addControl(new mapboxgl.NavigationControl({
   ];
 
   const leg_fill_layers = [
-    'senate_fill',    'senate_p1_fill', 'senate_p2_fill',
+    'senate_fill',    'senate_p1_fill', 'senate_p2_fill', 'senate_p3_fill',
     'house_fill',     'house_p1_fill', 'house_p2_fill',
     'congress_fill',  'congress_proposed_fill',
     'congress_proposed_2_fill'
   ];
 
   const leg_popup_layers = [
-    'senate_popup',    'senate_p1_popup', 'senate_p2_popup',
+    'senate_popup',    'senate_p1_popup', 'senate_p2_popup', 'senate_p3_popup',
     'house_popup',     'house_p1_popup', 'house_p2_popup',
     'congress_popup',  'congress_proposed_popup',
     'congress_proposed_2_popup'
