@@ -52,6 +52,10 @@
         type:'geojson',
         data:'data/congress21_p2.geojson'
       },
+      'src_congress_proposed_3': {
+        type:'geojson',
+        data:'data/congress_proposed3.geojson'
+      },
       'src_cities': {
         type:'geojson',
         data:'data/places_2020data.geojson'
@@ -641,6 +645,54 @@
       {
         'id': 'congress_proposed_2_popup',
         'source': 'src_congress_proposed_2',
+        'type': 'fill',
+        'layout': {
+          'visibility': 'visible'
+        },
+        'paint': {
+            "fill-opacity": 0
+            }
+      },
+      //////////////////////////////////////
+      // CONGRESS PROPOSED DISTRICS P3, 2020 //
+      /////////////////////////////////////
+      {
+        'id': 'congress_proposed_3',
+        'source': 'src_congress_proposed_3',
+        'type': 'line',
+        'layout': {
+            'visibility': 'none'
+        },
+        'paint': {
+          'line-color': "#750505",
+          'line-width': 2
+        }
+      },
+      {
+        'id': 'congress_proposed_3_fill',
+        'source': 'src_congress_proposed_3',
+        'type': 'fill',
+        'layout': {
+          'visibility': 'none'
+        },
+        'paint': {
+            "fill-opacity": 1
+            }
+      },
+      {
+        'id': 'congress_proposed_3_hover',
+        'source': 'src_congress_proposed_3',
+        'type': 'line',
+        'layout': {},
+        'paint': {
+          'line-color': "#c90000",
+          'line-width': 4
+        },
+        'filter': ["==", "DISTRICT", ""]
+      },
+      {
+        'id': 'congress_proposed_3_popup',
+        'source': 'src_congress_proposed_3',
         'type': 'fill',
         'layout': {
           'visibility': 'visible'
