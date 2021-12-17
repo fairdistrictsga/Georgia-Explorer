@@ -22,7 +22,7 @@
       },
       'src_house_p3': {
         type:'geojson',
-        data:'data/house_prop3_rep.geojson'
+        data:'data/enacted_house22.geojson'
       },
       'src_senate': {
         type:'geojson',
@@ -38,7 +38,7 @@
       },
       'src_senate_p3': {
         type:'geojson',
-        data:'data/senate_prop3_rep.geojson'
+        data:'data/enacted_senate22.geojson'
       },
       'src_congress': {
         type:'geojson',
@@ -54,7 +54,7 @@
       },
       'src_congress_proposed_3': {
         type:'geojson',
-        data:'data/congress_proposed3.geojson'
+        data:'data/enacted_congress22.geojson'
       },
       'src_cities': {
         type:'geojson',
@@ -66,11 +66,11 @@
       },
       'src_tract': {
         type: 'vector',
-        url: 'mapbox://fdgamaps.3huau41d'
+        url: 'mapbox://fdgamaps.0rih3puc'
       },
       'src_block': {
         type: 'vector',
-        url: 'mapbox://fdgamaps.6z57ygze'
+        url: 'mapbox://fdgamaps.3hcg2lso'
       },
       'src_precinct': {
         type: 'vector',
@@ -752,7 +752,7 @@
         'id': 'tract_bvap',
         'type': 'fill',
         'source': 'src_tract',
-        'source-layer': 'tract_census_2020-ce0711',
+        'source-layer': 'tract_census_2020-cmzo8u',
         'maxzoom': 11,
         "layout": {
               'visibility': "visible"
@@ -765,7 +765,7 @@
                         [0, '#f2f0f7'],
                         [0.249, '#aba8d0'],
                         [0.499, '#865ebc'],
-                        [0.749, '#54278f'],
+                        [0.749, '#664296'],
                         [1.1, '#d4d5d5']
                     ],
                     default: 'rgba(0, 0, 0, 0)'
@@ -790,7 +790,7 @@
         'id': 'block_bvap',
         'type': 'fill',
         'source': 'src_block',
-        'source-layer': 'block_census_2020-d6ktwd',
+        'source-layer': 'block_census_2020_small-ai13v3',
         'minzoom': 11,
         'layout': {
               'visibility': "none"
@@ -803,7 +803,7 @@
                         [0, '#f2f0f7'],
                         [0.249, '#aba8d0'],
                         [0.499, '#865ebc'],
-                        [0.749, '#54278f'],
+                        [0.749, '#664296'],
                         [1.1, '#d4d5d5']
                     ],
                     default: 'rgba(0, 0, 0, 0)'
@@ -831,7 +831,7 @@
         'id': 'tract_bipocvap',
         'type': 'fill',
         'source': 'src_tract',
-        'source-layer': 'tract_census_2020-ce0711',
+        'source-layer': 'tract_census_2020-cmzo8u',
         'maxzoom': 11,
         "layout": {
               'visibility': "none"
@@ -869,7 +869,7 @@
         'id': 'block_bipocvap',
         'type': 'fill',
         'source': 'src_block',
-        'source-layer': 'block_census_2020-d6ktwd',
+        'source-layer': 'block_census_2020_small-ai13v3',
         'minzoom': 11,
         'layout': {
               'visibility': "none"
@@ -909,7 +909,7 @@
         'id': 'tract_avap',
         'type': 'fill',
         'source': 'src_tract',
-        'source-layer': 'tract_census_2020-ce0711',
+        'source-layer': 'tract_census_2020-cmzo8u',
         'maxzoom': 11,
         "layout": {
               'visibility': "none"
@@ -935,7 +935,7 @@
         'id': 'block_avap',
         'type': 'fill',
         'source': 'src_block',
-        'source-layer': 'block_census_2020-d6ktwd',
+        'source-layer': 'block_census_2020_small-ai13v3',
         'minzoom': 11,
         'layout': {
               'visibility': "none"
@@ -964,7 +964,7 @@
         'id': 'tract_hvap',
         'type': 'fill',
         'source': 'src_tract',
-        'source-layer': 'tract_census_2020-ce0711',
+        'source-layer': 'tract_census_2020-cmzo8u',
         'maxzoom': 11,
         "layout": {
               'visibility': "none"
@@ -990,7 +990,7 @@
         'id': 'block_hvap',
         'type': 'fill',
         'source': 'src_block',
-        'source-layer': 'block_census_2020-d6ktwd',
+        'source-layer': 'block_census_2020_small-ai13v3',
         'minzoom': 11,
         'layout': {
               'visibility': "none"
