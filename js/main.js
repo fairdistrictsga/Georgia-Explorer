@@ -240,7 +240,7 @@ map.on("mousemove", "senate_p3_popup", function(e) {
     if (features.length) {
 
         document.getElementById('tooltip').innerHTML = 
-        '<h3>' + '<strong>' + 'Enacted Senate Map - Senate Bill 1EX' + '</strong>' + '</h3>' +
+        '<h3>' + '<strong>' + 'Enacted Senate Map' + '</strong>' + '</h3>' +
         '<h3>' + 'State Senate District ' + e.features[0].properties.district + '</h3>' +
                   'Population, 2020: ' + '<strong>' + e.features[0].properties.pop.toLocaleString("en-US") + '</strong>' +
         '</br>' + 'Voting Age Population (VAP), 2020: ' + '<strong>' + e.features[0].properties.tvap.toLocaleString("en-US") + '</strong>' +
@@ -359,7 +359,7 @@ map.on("mousemove", "house_p3_popup", function(e) {
     if (features.length) {
 
         document.getElementById('tooltip').innerHTML = 
-        '<h3>' + '<strong>' + 'Enacted House Map - House Bill 1EX' + '</strong>' + '</h3>' +
+        '<h3>' + '<strong>' + 'Enacted House Map' + '</strong>' + '</h3>' +
         '<h3>' + 'State House District ' + e.features[0].properties.district + '</h3>' +
                   'Population, 2020: ' + '<strong>' + e.features[0].properties.pop.toLocaleString("en-US") + '</strong>' +
         '</br>' + 'Voting Age Population (VAP), 2020: ' + '<strong>' + e.features[0].properties.tvap.toLocaleString("en-US") + '</strong>' +
@@ -478,7 +478,7 @@ map.on("mousemove", "congress_proposed_3_popup", function(e) {
     if (features.length) {
 
         document.getElementById('tooltip').innerHTML = 
-        '<h3>' + '<strong>' + 'Enacted Congressional Map - Senate Bill 2EX' + '</strong>' + '</h3>' +
+        '<h3>' + '<strong>' + 'Enacted Congressional Map' + '</strong>' + '</h3>' +
         '<h3>' + 'Congressional District ' + e.features[0].properties.district + '</h3>' +
                   'Population, 2020: ' + '<strong>' + e.features[0].properties.pop.toLocaleString("en-US") + '</strong>' +
         '</br>' + 'Voting Age Population (VAP), 2020: ' + '<strong>' + e.features[0].properties.tvap.toLocaleString("en-US") + '</strong>' +
