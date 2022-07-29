@@ -149,6 +149,7 @@ map.on("mousemove", "senate_popup", function(e) {
     if (features.length) {
 
         document.getElementById('tooltip').innerHTML = 
+        '<h3>' + '<strong>' + 'Previous State Senate Map (2014 - 2021)' + '</strong>' + '</h3>' +
         '<h3>' + 'State Senate District ' + e.features[0].properties.district + '</h3>' +
         'Population, 2020: ' + '<strong>' + e.features[0].properties.pop.toLocaleString("en-US") + '</strong>' +
         '</br>' + 'Voting Age Population (VAP), 2020: ' + '<strong>' + e.features[0].properties.tvap.toLocaleString("en-US") + '</strong>' +
@@ -270,6 +271,7 @@ map.on("mousemove", "house_popup", function(e) {
     if (features.length) {
 
         document.getElementById('tooltip').innerHTML = 
+        '<h3>' + '<strong>' + 'Previous State House Map (2015 - 2021)' + '</strong>' + '</h3>' +
         '<h3>' + 'State House District ' + e.features[0].properties.district + '</h3>' +
                   'Population, 2020: ' + '<strong>' + e.features[0].properties.pop.toLocaleString("en-US") + '</strong>' +
         '</br>' + 'Voting Age Population (VAP), 2020: ' + '<strong>' + e.features[0].properties.tvap.toLocaleString("en-US") + '</strong>' +
@@ -389,6 +391,7 @@ map.on("mousemove", "congress_popup", function(e) {
     if (features.length) {
 
         document.getElementById('tooltip').innerHTML = 
+        '<h3>' + '<strong>' + 'Previous Congressional Map (2011 - 2021)' + '</strong>' + '</h3>' +
         '<h3>' + 'Congressional District ' + e.features[0].properties.district + '</h3>' +
                   'Population, 2020: ' + '<strong>' + e.features[0].properties.pop.toLocaleString("en-US") + '</strong>' +
         '</br>' + 'Voting Age Population (VAP), 2020: ' + '<strong>' + e.features[0].properties.tvap.toLocaleString("en-US") + '</strong>' +
