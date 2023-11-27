@@ -256,6 +256,36 @@ map.on("mousemove", "senate_p3_popup", function(e) {
     }
 });
 
+map.on("mousemove", "senate_r1_popup", function(e) {
+  $('#sidebar').show();
+// create hover effect
+    map.setFilter("senate_r1_hover", ["==", "district", e.features[0].properties.district]);
+
+// change cursor to pointer
+    map.getCanvas().style.cursor = 'pointer';
+
+    var features = map.queryRenderedFeatures(e.point, {
+        layers: ["senate_r1_popup"]
+    });
+
+    if (features.length) {
+
+        document.getElementById('tooltip').innerHTML = 
+        '<h3>' + '<strong>' + 'Senate Remedy Map' + '</strong>' + '</h3>' +
+        '<h3>' + 'State Senate District ' + e.features[0].properties.district + '</h3>' +
+                  'Population, 2020: ' + '<strong>' + e.features[0].properties.pop.toLocaleString("en-US") + '</strong>' +
+        '</br>' + 'Voting Age Population (VAP), 2020: ' + '<strong>' + e.features[0].properties.tvap.toLocaleString("en-US") + '</strong>' +
+        '</br>' + 'Percent Black VAP: ' + '<strong>' + (e.features[0].properties.pct_bvp * 100).toFixed() + '%' + '</strong>' +
+        '</br>' + 'Percent Asian VAP: ' + '<strong>' + (e.features[0].properties.pct_avp * 100).toFixed() + '%' + '</strong>' +
+        '</br>' + 'Percent Hispanic VAP: ' + '<strong>' + (e.features[0].properties.pct_hvp * 100).toFixed() + '%' + '</strong>' +
+        '</br>' + 'Percent Minority VAP: ' + '<strong>' + (e.features[0].properties.pct_bp_ * 100).toFixed() + '%' + '</strong>' +
+        '</br>' + 'Partisan Lean Estimate, Percent Democrat 2018-21: ' + '<strong>' + (e.features[0].properties.partisan * 100).toFixed() + '%' + '</strong>';
+    } else {
+        document.getElementById('tooltip-name').innerHTML = "";
+        document.getElementById('tooltip').innerHTML = "";
+    }
+});
+
 map.on("mousemove", "house_popup", function(e) {
   $('#sidebar').show();
 // create hover effect
@@ -541,6 +571,17 @@ map.on("mouseleave", "senate_p3_popup", function() {
 });
 
 // Reset the state-fills-hover layer's filter when the mouse leaves the layer.
+map.on("mouseleave", "senate_r1_popup", function() {
+// remove hover color
+    map.setFilter("senate_r1_hover", ["==", "district", ""]);
+// remove popup
+    popup.remove();  // make this work, and create a hover handler
+    document.getElementById('tooltip').innerHTML = "";
+    map.getCanvas().style.cursor = 'default';
+    $('#sidebar').hide();
+});
+
+// Reset the state-fills-hover layer's filter when the mouse leaves the layer.
 map.on("mouseleave", "house_popup", function() {
 // remove hover color
     map.setFilter("house_hover", ["==", "district", ""]);
@@ -771,7 +812,7 @@ map.addControl(new mapboxgl.NavigationControl({
   // layers
 
   const leg_layers = [
-    'senate',   'senate_p1', 'senate_p2', 'senate_p3',
+    'senate',   'senate_p1', 'senate_p2', 'senate_p3', 'senate_r1',
     'house',    'house_p1', 'house_p2', 'house_p3',
     'congress', 'congress_proposed',
     'congress_proposed_2', 'congress_proposed_3' 
@@ -786,14 +827,14 @@ map.addControl(new mapboxgl.NavigationControl({
   ];
 
   const leg_fill_layers = [
-    'senate_fill',    'senate_p1_fill', 'senate_p2_fill', 'senate_p3_fill',
+    'senate_fill',    'senate_p1_fill', 'senate_p2_fill', 'senate_p3_fill',  'senate_r1_fill',
     'house_fill',     'house_p1_fill', 'house_p2_fill', 'house_p3_fill',
     'congress_fill',  'congress_proposed_fill', 'congress_proposed_2_fill',
     'congress_proposed_3_fill'
   ];
 
   const leg_popup_layers = [
-    'senate_popup',    'senate_p1_popup', 'senate_p2_popup', 'senate_p3_popup',
+    'senate_popup',    'senate_p1_popup', 'senate_p2_popup', 'senate_p3_popup',  'senate_r1_popup',
     'house_popup',     'house_p1_popup', 'house_p2_popup', 'house_p3_popup',
     'congress_popup',  'congress_proposed_popup', 'congress_proposed_2_popup',
     'congress_proposed_3_popup'
