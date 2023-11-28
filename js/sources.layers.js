@@ -329,6 +329,54 @@
             }
       },
       ////////////////////////////////
+      // HOUSE DISTRICS - REMEDY //
+      ////////////////////////////////
+      {
+        'id': 'house_r1',
+        'source': 'src_house_r1',
+        'type': 'line',
+        'layout': {
+            'visibility': 'none'
+        },
+        'paint': {
+          'line-color': "#750505",
+          'line-width': 2
+        }
+      },
+      {
+        'id': 'house_r1_fill',
+        'source': 'src_house_r1',
+        'type': 'fill',
+        'layout': {
+          'visibility': 'none'
+        },
+        'paint': {
+            "fill-opacity": 1
+            }
+      },
+      {
+        'id': 'house_r1_hover',
+        'source': 'src_house_r1',
+        'type': 'line',
+        'layout': {},
+        'paint': {
+          'line-color': "#c90000",
+          'line-width': 4
+        },
+        'filter': ["==", "DISTRICT", ""]
+      },
+      {
+        'id': 'house_r1_popup',
+        'source': 'src_house_r1',
+        'type': 'fill',
+        'layout': {
+          'visibility': 'visible'
+        },
+        'paint': {
+            "fill-opacity": 0
+            }
+      },
+      ////////////////////////////////
       // SENATE DISTRICS, 2014 //
       ////////////////////////////////
       {
