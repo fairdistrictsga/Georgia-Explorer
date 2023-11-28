@@ -24,6 +24,10 @@
         type:'geojson',
         data:'data/enacted_house22.geojson'
       },
+      'src_house_r1': {
+        type:'geojson',
+        data:'data/house_remedy_1.geojson'
+      },
       'src_senate': {
         type:'geojson',
         data:'data/senate14_census20.geojson'
