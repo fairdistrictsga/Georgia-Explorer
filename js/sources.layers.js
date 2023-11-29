@@ -28,6 +28,10 @@
         type:'geojson',
         data:'data/house_remedy_1.geojson'
       },
+      'src_house_r2': {
+        type:'geojson',
+        data:'data/house_remedy_2.geojson'
+      },
       'src_senate': {
         type:'geojson',
         data:'data/senate14_census20.geojson'
@@ -368,6 +372,54 @@
       {
         'id': 'house_r1_popup',
         'source': 'src_house_r1',
+        'type': 'fill',
+        'layout': {
+          'visibility': 'visible'
+        },
+        'paint': {
+            "fill-opacity": 0
+            }
+      },
+      ////////////////////////////////
+      // HOUSE DISTRICS - REMEDY //
+      ////////////////////////////////
+      {
+        'id': 'house_r2',
+        'source': 'src_house_r2',
+        'type': 'line',
+        'layout': {
+            'visibility': 'none'
+        },
+        'paint': {
+          'line-color': "#750505",
+          'line-width': 2
+        }
+      },
+      {
+        'id': 'house_r2_fill',
+        'source': 'src_house_r2',
+        'type': 'fill',
+        'layout': {
+          'visibility': 'none'
+        },
+        'paint': {
+            "fill-opacity": 1
+            }
+      },
+      {
+        'id': 'house_r2_hover',
+        'source': 'src_house_r2',
+        'type': 'line',
+        'layout': {},
+        'paint': {
+          'line-color': "#c90000",
+          'line-width': 4
+        },
+        'filter': ["==", "DISTRICT", ""]
+      },
+      {
+        'id': 'house_r2_popup',
+        'source': 'src_house_r2',
         'type': 'fill',
         'layout': {
           'visibility': 'visible'
