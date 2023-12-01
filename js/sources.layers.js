@@ -72,6 +72,10 @@
         type:'geojson',
         data:'data/enacted_congress22.geojson'
       },
+      'src_congress_r1': {
+        type:'geojson',
+        data:'data/congress_remedy_1.geojson'
+      },
       'src_cities': {
         type:'geojson',
         data:'data/places_2020data.geojson'
@@ -903,6 +907,54 @@
       {
         'id': 'congress_proposed_3_popup',
         'source': 'src_congress_proposed_3',
+        'type': 'fill',
+        'layout': {
+          'visibility': 'visible'
+        },
+        'paint': {
+            "fill-opacity": 0
+            }
+      },
+      //////////////////////////////////////
+      // CONGRESS REMEDY MAP 12/1/2023 //
+      /////////////////////////////////////
+      {
+        'id': 'congress_r1',
+        'source': 'src_congress_r1',
+        'type': 'line',
+        'layout': {
+            'visibility': 'none'
+        },
+        'paint': {
+          'line-color': "#750505",
+          'line-width': 2
+        }
+      },
+      {
+        'id': 'congress_r1_fill',
+        'source': 'src_congress_r1',
+        'type': 'fill',
+        'layout': {
+          'visibility': 'none'
+        },
+        'paint': {
+            "fill-opacity": 1
+            }
+      },
+      {
+        'id': 'congress_r1_hover',
+        'source': 'src_congress_r1',
+        'type': 'line',
+        'layout': {},
+        'paint': {
+          'line-color': "#c90000",
+          'line-width': 4
+        },
+        'filter': ["==", "DISTRICT", ""]
+      },
+      {
+        'id': 'congress_r1_popup',
+        'source': 'src_congress_r1',
         'type': 'fill',
         'layout': {
           'visibility': 'visible'

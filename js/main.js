@@ -616,6 +616,36 @@ map.on("mousemove", "congress_proposed_3_popup", function(e) {
     }
 });
 
+map.on("mousemove", "congress_r1_popup", function(e) {
+  $('#sidebar').show();
+// create hover effect
+  map.setFilter("congress_r1_hover", ["==", "district", e.features[0].properties.district]);
+
+// change cursor to pointer
+  map.getCanvas().style.cursor = 'pointer';
+
+    var features = map.queryRenderedFeatures(e.point, {
+        layers: ["congress_r1_popup"]
+    });
+
+    if (features.length) {
+
+        document.getElementById('tooltip').innerHTML = 
+        '<h3>' + '<strong>' + 'US Congress Remedy Map' + '</strong>' + '</h3>' +
+        '<h3>' + 'Congressional District ' + e.features[0].properties.district + '</h3>' +
+                  'Population, 2020: ' + '<strong>' + e.features[0].properties.pop.toLocaleString("en-US") + '</strong>' +
+        '</br>' + 'Voting Age Population (VAP), 2020: ' + '<strong>' + e.features[0].properties.tvap.toLocaleString("en-US") + '</strong>' +
+        '</br>' + 'Percent Black VAP: ' + '<strong>' + (e.features[0].properties.pct_bvp * 100).toFixed() + '%' + '</strong>' +
+        '</br>' + 'Percent Asian VAP: ' + '<strong>' + (e.features[0].properties.pct_avp * 100).toFixed() + '%' + '</strong>' +
+        '</br>' + 'Percent Hispanic VAP: ' + '<strong>' + (e.features[0].properties.pct_hvp * 100).toFixed() + '%' + '</strong>' +
+        '</br>' + 'Percent Minority VAP: ' + '<strong>' + (e.features[0].properties.pct_bp_ * 100).toFixed() + '%' + '</strong>' +
+       '</br>' + 'Partisan Lean Estimate, Percent Democrat 2018-21: ' + '<strong>' + (e.features[0].properties.partisan * 100).toFixed() + '%' + '</strong>';
+    } else {
+        document.getElementById('tooltip-name').innerHTML = "";
+        document.getElementById('tooltip').innerHTML = "";
+    }
+});
+
 // Reset the state-fills-hover layer's filter when the mouse leaves the layer.
 map.on("mouseleave", "senate_popup", function() {
 // remove hover color
@@ -792,6 +822,17 @@ map.on("mouseleave", "congress_proposed_3_popup", function() {
     $('#sidebar').hide();
 });
 
+// Reset the state-fills-hover layer's filter when the mouse leaves the layer.
+map.on("mouseleave", "congress_r1_popup", function() {
+// remove hover color
+    map.setFilter("congress_r1_hover", ["==", "district", ""]);
+// remove popup
+    popup.remove();  // make this work, and create a hover handler
+    document.getElementById('tooltip').innerHTML = "";
+    map.getCanvas().style.cursor = 'default';
+    $('#sidebar').hide();
+});
+
 // Add zoom and rotation controls to the map.
 map.addControl(new mapboxgl.NavigationControl({
     // Hide rotation control.
@@ -938,7 +979,7 @@ map.addControl(new mapboxgl.NavigationControl({
     'senate',   'senate_p1', 'senate_p2', 'senate_p3', 'senate_r1', 'senate_r2',
     'house',    'house_p1', 'house_p2', 'house_p3', 'house_r1', 'house_r2',
     'congress', 'congress_proposed',
-    'congress_proposed_2', 'congress_proposed_3' 
+    'congress_proposed_2', 'congress_proposed_3', 'congress_r1'
   ];
 
   const demo_layers = [
@@ -953,14 +994,14 @@ map.addControl(new mapboxgl.NavigationControl({
     'senate_fill',    'senate_p1_fill', 'senate_p2_fill', 'senate_p3_fill',  'senate_r1_fill',  'senate_r2_fill',
     'house_fill',     'house_p1_fill', 'house_p2_fill', 'house_p3_fill',  'house_r1_fill',  'house_r2_fill',
     'congress_fill',  'congress_proposed_fill', 'congress_proposed_2_fill',
-    'congress_proposed_3_fill'
+    'congress_proposed_3_fill', 'congress_r1_fill'
   ];
 
   const leg_popup_layers = [
     'senate_popup',    'senate_p1_popup', 'senate_p2_popup', 'senate_p3_popup',  'senate_r1_popup',  'senate_r2_popup',
     'house_popup',     'house_p1_popup', 'house_p2_popup', 'house_p3_popup', 'house_r1_popup', 'house_r2_popup',
     'congress_popup',  'congress_proposed_popup', 'congress_proposed_2_popup',
-    'congress_proposed_3_popup'
+    'congress_proposed_3_popup', 'congress_r1_popup'
   ];
 
   const cities_layers = [
