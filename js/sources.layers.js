@@ -76,6 +76,10 @@
         type:'geojson',
         data:'data/congress_remedy_1.geojson'
       },
+      'src_congress_r2': {
+        type:'geojson',
+        data:'data/congress_remedy_2.geojson'
+      },
       'src_cities': {
         type:'geojson',
         data:'data/places_2020data.geojson'
@@ -955,6 +959,54 @@
       {
         'id': 'congress_r1_popup',
         'source': 'src_congress_r1',
+        'type': 'fill',
+        'layout': {
+          'visibility': 'visible'
+        },
+        'paint': {
+            "fill-opacity": 0
+            }
+      },
+      //////////////////////////////////////
+      // CONGRESS GHDC REMEDY MAP 12/4/2023 //
+      /////////////////////////////////////
+      {
+        'id': 'congress_r2',
+        'source': 'src_congress_r2',
+        'type': 'line',
+        'layout': {
+            'visibility': 'none'
+        },
+        'paint': {
+          'line-color': "#750505",
+          'line-width': 2
+        }
+      },
+      {
+        'id': 'congress_r2_fill',
+        'source': 'src_congress_r2',
+        'type': 'fill',
+        'layout': {
+          'visibility': 'none'
+        },
+        'paint': {
+            "fill-opacity": 1
+            }
+      },
+      {
+        'id': 'congress_r2_hover',
+        'source': 'src_congress_r2',
+        'type': 'line',
+        'layout': {},
+        'paint': {
+          'line-color': "#c90000",
+          'line-width': 4
+        },
+        'filter': ["==", "DISTRICT", ""]
+      },
+      {
+        'id': 'congress_r2_popup',
+        'source': 'src_congress_r2',
         'type': 'fill',
         'layout': {
           'visibility': 'visible'
