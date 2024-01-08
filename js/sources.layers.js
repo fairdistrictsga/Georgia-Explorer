@@ -50,7 +50,7 @@
       },
       'src_senate_r1': {
         type:'geojson',
-        data:'data/senate_remedy.geojson'
+        data:'data/senate_remedy_20pct.geojson'
       },
       'src_senate_r2': {
         type:'geojson',
