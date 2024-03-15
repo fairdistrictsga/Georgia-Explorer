@@ -144,6 +144,7 @@ div#new-controls {
 
 	.toggle {
 		margin-right: 5px;
+		font-size: .9em;
 	}
 
 	.background-layers {
@@ -392,7 +393,7 @@ li.dataTitle span.keycolor {
 
 @media (max-width: 785px) {
 	#sidebar {
-	    top: 140px;
+	    top: 200px;
 	    width: 240px;
 	    right:20px;
 	    left:auto;
