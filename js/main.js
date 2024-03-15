@@ -87,7 +87,8 @@ map.addControl(new MapboxGeocoder({ // Initialize the geocoder
   accessToken: mapboxgl.accessToken, // Set the access token
   bbox: [-86.548059, 30.183318, -80.840278, 35.451994], // define area that you can search for addresses
   mapboxgl: mapboxgl, // Set the mapbox-gl instance
-  marker: true // Do not use the default marker style
+  marker: true, // Do not use the default marker style
+  placeholder: 'Find your district by searching for an address', // Placeholder text for the search bar
 }));
 
 addSources = function () {

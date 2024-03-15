@@ -38,88 +38,90 @@
 <!-- MARKUP GOES HERE -->
 
 <main class="interactive">
-  <a href="https://www.fairdistrictsga.org/"><img src="img/fdga_logo.png" alt="FDGA" id="logo"></a>
-<!--   <img id="logo" src="img/fdga_logo.png"> -->
-  <div id="map"></div>
-
-  <!-- dropdowns -->
-  <div id="new-controls">
-    <select class='search-buttons' id="level" title="Select the political boundary">
-      <option value="" disabled="true">Select the political boundary</option>
-      <option value="congress_proposed_3" selected>Current US Congress, 2021 - 2024</option>
-      <option value="senate_p3">Current State Senate, 2021 - 2024</option>
-      <option value="house_p3">Current State House, 2021 - 2024</option>
-      <option value="" disabled="true">Enacted Maps to be used for 2024 election</option>
-      <option value="congress_r1">Enacted US Congress, for 2024 elections</option>
-      <option value="senate_r1">Enacted State Senate, for 2024 elections</option>
-      <option value="house_r1">Enacted State House, for 2024 elections</option>
-      <option value="" disabled="true">Previous Maps</option>
-      <option value="congress">US Congress, 2011-2021</option>
-      <option value="senate">State Senate, 2014-2021</option>
-      <option value="house">State House, 2015-2021</option>
-      <option value="" disabled="true">Other Proposed Remedy Maps 2023</option>
-      <option value="senate_r2">State Senate Remedy Map, proposed by GSDC - 11/28/2023</option>
-      <option value="house_r2">State House Remedy Map, proposed by GHDC - 11/29/2023</option>
-      <option value="congress_r2">US Congress Remedy Map, proposed by GHDC & GSDC - 12/4/2023</option>
-      <option value="" disabled="true">Other 2021 Proposed Maps</option>
-      <option value="congress_proposed">US Congress, proposed by Senate Committee Chair - 9/27</option>
-      <option value="congress_proposed_2">US Congress, proposed by Democratic Caucuses - 10/22</option>
-      <option value="senate_p1">State Senate, proposed by Senate Democratic Caucus - 10/28</option>
-      <option value="senate_p2">State Senate, proposed by Senate Committee Chair - 11/2</option>
-      <option value="house_p1">State House, proposed by House Democratic Caucus - 10/29</option>
-      <option value="house_p2">State House, proposed by House Committee Chair - 11/2</option>
-      <!-- <option value="senate_proposed" disabled="true">State Senate, proposed</option>
-      <option value="congress_proposed" disabled="true">US Congress, proposed</option> -->
-    </select>
-    <select class='search-buttons' id="measure" title="Select the background to display">
-      <option value="" disabled="true">Select the background to display</option>
-      <option value="streets">Streets Background Layer</option>
-      <option disabled>2020 US Census Demographics</option> <!-- make this a header, not an option -->
-      <option value="bvap" selected>-- Percent Black Voting Age Population</option>
-      <option value="hvap">-- Percent Hispanic Voting Age Population</option>
-      <option value="avap">-- Percent Asian Voting Age Population</option>
-      <option value="bipocvap">-- Percent Minority Voting Age Population</option>
-      <option disabled>Election Results by precinct</option> <!-- make this a header, not an option -->
-      <option value="precinct_plean">-- Partisan Lean, 2018-2021</option>
-<!--       <option value="ussr21">-- US Senate (Loeffler/Warnock), 2021</option>
-      <option value="p20">-- President, 2020</option>
-      <option value="g18">-- Governor, 2018</option> -->
-    </select>
-    <div class="toggle">
-      <input class="form-check-input" type="checkbox" value="" id="show_district">
-      <label class="form-check-label" for="show_district">
-        Show data at district-level
-      </label>
+  <div class="banner">
+    <div id="logo-container">
+      <a href="https://www.fairdistrictsga.org/"><img src="img/fdga_logo.png" alt="FDGA" id="logo"></a>
     </div>
-    <div class="toggle">
-      <input class="form-check-input" type="checkbox" value="" id="show_city">
-      <label class="form-check-label" for="show_city">
-        Show city boundaries
-      </label>
+    <!-- dropdowns -->
+    <div id="new-controls">
+      <div class="boundary-and-background">
+        <div class="boundary">
+          <div class="toggle-label">Select the political boundary to view in the map</div>
+          <select class='search-buttons' id="level" title="Select the political boundary">
+            <option value="" disabled="true">Select the political boundary to view in the map</option>
+            <option value="" disabled="true">Enacted Maps to be used for 2024 election</option>
+            <option value="congress_r1" selected>Enacted US Congress, for 2024 elections</option>
+            <option value="senate_r1">Enacted State Senate, for 2024 elections</option>
+            <option value="house_r1">Enacted State House, for 2024 elections</option>
+            <option value="" disabled="true">Current Maps until the 2024 election</option>
+            <option value="congress_proposed_3">Current US Congress, 2021 - 2024</option>
+            <option value="senate_p3">Current State Senate, 2021 - 2024</option>
+            <option value="house_p3">Current State House, 2021 - 2024</option>
+            <option value="" disabled="true">Previous Maps</option>
+            <option value="congress">US Congress, 2011-2021</option>
+            <option value="senate">State Senate, 2014-2021</option>
+            <option value="house">State House, 2015-2021</option>
+            <option value="" disabled="true">Other Maps Proposed in 2021 and 2023</option>
+            <option value="senate_r2">State Senate Remedy Map, GSDC, 2023</option>
+            <option value="house_r2">State House Remedy Map, GHDC, 2023</option>
+            <option value="congress_r2">US Congress Remedy Map, GHDC & GSDC, 2023</option>
+            <!-- <option value="" disabled="true">Other 2021 Proposed Maps</option> -->
+            <option value="congress_proposed">US Congress, Senate Committee Chair, 2021</option>
+            <option value="congress_proposed_2">US Congress, Democratic Caucuses, 2021</option>
+            <option value="senate_p1">State Senate, Senate Democratic Caucus, 2021</option>
+            <option value="senate_p2">State Senate, Senate Committee Chair, 2021</option>
+            <option value="house_p1">State House, House Democratic Caucus, 2021</option>
+            <option value="house_p2">State House, House Committee Chair, 2021</option>
+          </select>
+        </div>
+        <div class="background-layers">
+          <div class="toggle-label">Select the data to display</div>
+          <select class='search-buttons' id="measure" title="Select the background to display">
+            <option value="" disabled="true">Select the background to display</option>
+            <option value="streets">Streets Background Layer</option>
+            <option disabled>2020 US Census Demographics</option> <!-- make this a header, not an option -->
+            <option value="bvap" selected>Percent Black Voting Age Population</option>
+            <option value="hvap">Percent Hispanic Voting Age Population</option>
+            <option value="avap">Percent Asian Voting Age Population</option>
+            <option value="bipocvap">Percent Minority Voting Age Population</option>
+            <option disabled>Election Results by precinct</option> <!-- make this a header, not an option -->
+            <option value="precinct_plean">Partisan Lean, 2018-2021</option>
+          </select>
+        </div>
+      </div>
+      <div class="toggle-container">
+        <div class="toggle">
+          <input class="form-check-input" type="checkbox" value="" id="show_district">
+          <label class="form-check-label" for="show_district">
+            Display data at district-level
+          </label>
+        </div>
+        <div class="toggle">
+          <input class="form-check-input" type="checkbox" value="" id="show_city">
+          <label class="form-check-label" for="show_city">
+            Add city boundaries
+          </label>
+        </div>
+        <div class="toggle">
+          <input class="form-check-input" type="checkbox" value="" id="show_county">
+          <label class="form-check-label" for="show_county">
+            Add county boundaries
+          </label>
+        </div>
+      </div>
     </div>
-    <div class="toggle">
-      <input class="form-check-input" type="checkbox" value="" id="show_county">
-      <label class="form-check-label" for="show_county">
-        Show county boundaries
-      </label>
+  </div>
+  <div id="map-container">
+    <div id="map"></div>
+  </div>
+    <div id='sidebar' style="display: none;">
+        <div id='tooltip'></div>
     </div>
-  </div>
 
-  <div id='sidebar' style="display: none;">
-      <div id='tooltip'></div>
-  </div>
-
-  <div id="legendcontainer">
-    <ul id="legend-ui"></ul>
-  </div>
-
-  <!-- <div id="legend-container">
-    <ul id="ga-legends" class="map-legend-overlay"></ul>
-  </div>
-
-  <div id="legendcontainer_isolated" style="display: none;">
-    <ul id="legend-ui_isolated"></ul>
-  </div> -->
+    <div id="legendcontainer">
+      <ul id="legend-ui"></ul>
+    </div>
+  <!-- </div> -->
 </main>
 
 <!-- j-query & bootsrap-->
