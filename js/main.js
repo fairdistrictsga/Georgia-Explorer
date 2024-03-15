@@ -148,8 +148,8 @@ map.on("mousemove", "senate_popup", function(e) {
     if (features.length) {
 
         document.getElementById('tooltip').innerHTML = 
-        '<h3>' + '<strong>' + 'Previous State Senate Map (2014 - 2021)' + '</strong>' + '</h3>' +
-        '<h3>' + 'State Senate District ' + e.features[0].properties.district + '</h3>' +
+        '<span class="tooltip-title">' + '<strong>' + 'Previous State Senate Map (2014 - 2021)' + '</strong>' + '</span>' +
+        '<span class="tooltip-title">' + 'State Senate District ' + e.features[0].properties.district + '</span class="tooltip-title">' +
         'Population, 2020: ' + '<strong>' + e.features[0].properties.pop.toLocaleString("en-US") + '</strong>' +
         '</br>' + 'Voting Age Population (VAP), 2020: ' + '<strong>' + e.features[0].properties.tvap.toLocaleString("en-US") + '</strong>' +
         '</br>' + 'Percent Black VAP: ' + '<strong>' + (e.features[0].properties.pct_bvp * 100).toFixed() + '%' + '</strong>' +
@@ -179,8 +179,8 @@ map.on("mousemove", "senate_p1_popup", function(e) {
     if (features.length) {
 
         document.getElementById('tooltip').innerHTML = 
-        '<h3>' + '<strong>' + 'Map proposed by Senate Democratic Caucus, Oct. 28, 2021' + '</strong>' + '</h3>' +
-        '<h3>' + '<strong>' + 'Proposed ' + '</strong>' + 'State Senate District ' + e.features[0].properties.district + '</h3>' +
+        '<span class="tooltip-title">' + '<strong>' + 'Map proposed by Senate Democratic Caucus, Oct. 28, 2021' + '</strong>' + '</span>' +
+        '<span class="tooltip-title">' + 'Proposed State Senate District ' + e.features[0].properties.district + '</span class="tooltip-title">' +
                   'Population, 2020: ' + '<strong>' + e.features[0].properties.pop.toLocaleString("en-US") + '</strong>' +
         '</br>' + 'Voting Age Population (VAP), 2020: ' + '<strong>' + e.features[0].properties.tvap.toLocaleString("en-US") + '</strong>' +
         '</br>' + 'Percent Black VAP: ' + '<strong>' + (e.features[0].properties.pct_bvp * 100).toFixed() + '%' + '</strong>' +
@@ -210,8 +210,8 @@ map.on("mousemove", "senate_p2_popup", function(e) {
     if (features.length) {
 
         document.getElementById('tooltip').innerHTML = 
-        '<h3>' + '<strong>' + 'Map proposed by Senate Committee Chair, Nov. 2, 2021' + '</strong>' + '</h3>' +
-        '<h3>' + '<strong>' + 'Proposed ' + '</strong>' + 'State Senate District ' + e.features[0].properties.district + '</h3>' +
+        '<span class="tooltip-title">' + '<strong>' + 'Map proposed by Senate Committee Chair, Nov. 2, 2021' + '</strong>' + '</span>' +
+        '<span class="tooltip-title">' + 'Proposed State Senate District ' + e.features[0].properties.district + '</span class="tooltip-title">' +
                   'Population, 2020: ' + '<strong>' + e.features[0].properties.pop.toLocaleString("en-US") + '</strong>' +
         '</br>' + 'Voting Age Population (VAP), 2020: ' + '<strong>' + e.features[0].properties.tvap.toLocaleString("en-US") + '</strong>' +
         '</br>' + 'Percent Black VAP: ' + '<strong>' + (e.features[0].properties.pct_bvp * 100).toFixed() + '%' + '</strong>' +
@@ -240,8 +240,8 @@ map.on("mousemove", "senate_p3_popup", function(e) {
     if (features.length) {
 
         document.getElementById('tooltip').innerHTML = 
-        '<h3>' + '<strong>' + 'Previous State Senate Map (2021 - 2023)' + '</strong>' + '</h3>' +
-        '<h3>' + 'State Senate District ' + e.features[0].properties.district + '</h3>' +
+        '<span class="tooltip-title">' + '<strong>' + 'Previous State Senate Map (2021 - 2023)' + '</strong>' + '</span>' +
+        '<span class="tooltip-title">' + 'State Senate District ' + e.features[0].properties.district + '</span class="tooltip-title">' +
                   'Population, 2020: ' + '<strong>' + e.features[0].properties.pop.toLocaleString("en-US") + '</strong>' +
         '</br>' + 'Voting Age Population (VAP), 2020: ' + '<strong>' + e.features[0].properties.tvap.toLocaleString("en-US") + '</strong>' +
         '</br>' + 'Percent Black VAP: ' + '<strong>' + (e.features[0].properties.pct_bvp * 100).toFixed() + '%' + '</strong>' +
@@ -270,8 +270,8 @@ map.on("mousemove", "senate_r1_popup", function(e) {
     if (features.length) {
 
         document.getElementById('tooltip').innerHTML = 
-        '<h3>' + '<strong>' + 'Enacted Senate Map' + '</strong>' + '</h3>' +
-        '<h3>' + 'State Senate District ' + e.features[0].properties.district + '</h3>' +
+        '<span class="tooltip-title">' + '<strong>' + 'Enacted Senate Map' + '</strong>' + '</span>' +
+        '<span class="tooltip-title">' + 'State Senate District ' + e.features[0].properties.district + '</span class="tooltip-title">' +
                   'Population, 2020: ' + '<strong>' + e.features[0].properties.pop.toLocaleString("en-US") + '</strong>' +
         '</br>' + 'Voting Age Population (VAP), 2020: ' + '<strong>' + e.features[0].properties.tvap.toLocaleString("en-US") + '</strong>' +
         '</br>' + 'Percent Black VAP: ' + '<strong>' + (e.features[0].properties.pct_bvp * 100).toFixed() + '%' + '</strong>' +
@@ -300,8 +300,8 @@ map.on("mousemove", "senate_r2_popup", function(e) {
     if (features.length) {
 
         document.getElementById('tooltip').innerHTML = 
-        '<h3>' + '<strong>' + 'GSDC Senate Remedy Map' + '</strong>' + '</h3>' +
-        '<h3>' + 'State Senate District ' + e.features[0].properties.district + '</h3>' +
+        '<span class="tooltip-title">' + '<strong>' + 'GSDC Senate Remedy Map' + '</strong>' + '</span>' +
+        '<span class="tooltip-title">' + 'State Senate District ' + e.features[0].properties.district + '</span class="tooltip-title">' +
                   'Population, 2020: ' + '<strong>' + e.features[0].properties.pop.toLocaleString("en-US") + '</strong>' +
         '</br>' + 'Voting Age Population (VAP), 2020: ' + '<strong>' + e.features[0].properties.tvap.toLocaleString("en-US") + '</strong>' +
         '</br>' + 'Percent Black VAP: ' + '<strong>' + (e.features[0].properties.pct_bvp * 100).toFixed() + '%' + '</strong>' +
@@ -330,8 +330,8 @@ map.on("mousemove", "house_popup", function(e) {
     if (features.length) {
 
         document.getElementById('tooltip').innerHTML = 
-        '<h3>' + '<strong>' + 'Previous State House Map (2015 - 2021)' + '</strong>' + '</h3>' +
-        '<h3>' + 'State House District ' + e.features[0].properties.district + '</h3>' +
+        '<span class="tooltip-title">' + '<strong>' + 'Previous State House Map (2015 - 2021)' + '</strong>' + '</span>' +
+        '<span class="tooltip-title">' + 'State House District ' + e.features[0].properties.district + '</span class="tooltip-title">' +
                   'Population, 2020: ' + '<strong>' + e.features[0].properties.pop.toLocaleString("en-US") + '</strong>' +
         '</br>' + 'Voting Age Population (VAP), 2020: ' + '<strong>' + e.features[0].properties.tvap.toLocaleString("en-US") + '</strong>' +
         '</br>' + 'Percent Black VAP: ' + '<strong>' + (e.features[0].properties.pct_bvp * 100).toFixed() + '%' + '</strong>' +
@@ -360,8 +360,8 @@ map.on("mousemove", "house_p1_popup", function(e) {
     if (features.length) {
 
         document.getElementById('tooltip').innerHTML = 
-        '<h3>' + '<strong>' + 'Map proposed by House Democratic Caucus, Oct. 29, 2021' + '</strong>' + '</h3>' +
-        '<h3>' + '<strong>' + 'Proposed ' + '</strong>' + 'State House District ' + e.features[0].properties.district + '</h3>' +
+        '<span class="tooltip-title">' + '<strong>' + 'Map proposed by House Democratic Caucus, Oct. 29, 2021' + '</strong>' + '</span>' +
+        '<span class="tooltip-title">' + 'Proposed State House District ' + e.features[0].properties.district + '</span class="tooltip-title">' +
                   'Population, 2020: ' + '<strong>' + e.features[0].properties.pop.toLocaleString("en-US") + '</strong>' +
         '</br>' + 'Voting Age Population (VAP), 2020: ' + '<strong>' + e.features[0].properties.tvap.toLocaleString("en-US") + '</strong>' +
         '</br>' + 'Percent Black VAP: ' + '<strong>' + (e.features[0].properties.pct_bvp * 100).toFixed() + '%' + '</strong>' +
@@ -390,8 +390,8 @@ map.on("mousemove", "house_p2_popup", function(e) {
     if (features.length) {
 
         document.getElementById('tooltip').innerHTML = 
-        '<h3>' + '<strong>' + 'Map proposed by House Committee Chair, Nov. 2, 2021' + '</strong>' + '</h3>' +
-        '<h3>' + '<strong>' + 'Proposed ' + '</strong>' + 'State House District ' + e.features[0].properties.district + '</h3>' +
+        '<span class="tooltip-title">' + '<strong>' + 'Map proposed by House Committee Chair, Nov. 2, 2021' + '</strong>' + '</span>' +
+        '<span class="tooltip-title">' + 'Proposed State House District ' + e.features[0].properties.district + '</span class="tooltip-title">' +
                   'Population, 2020: ' + '<strong>' + e.features[0].properties.pop.toLocaleString("en-US") + '</strong>' +
         '</br>' + 'Voting Age Population (VAP), 2020: ' + '<strong>' + e.features[0].properties.tvap.toLocaleString("en-US") + '</strong>' +
         '</br>' + 'Percent Black VAP: ' + '<strong>' + (e.features[0].properties.pct_bvp * 100).toFixed() + '%' + '</strong>' +
@@ -420,8 +420,8 @@ map.on("mousemove", "house_p3_popup", function(e) {
     if (features.length) {
 
         document.getElementById('tooltip').innerHTML = 
-        '<h3>' + '<strong>' + 'Previous State House Map (2021 - 2023)' + '</strong>' + '</h3>' +
-        '<h3>' + 'State House District ' + e.features[0].properties.district + '</h3>' +
+        '<span class="tooltip-title">' + '<strong>' + 'Previous State House Map (2021 - 2023)' + '</strong>' + '</span>' +
+        '<span class="tooltip-title">' + 'State House District ' + e.features[0].properties.district + '</span class="tooltip-title">' +
                   'Population, 2020: ' + '<strong>' + e.features[0].properties.pop.toLocaleString("en-US") + '</strong>' +
         '</br>' + 'Voting Age Population (VAP), 2020: ' + '<strong>' + e.features[0].properties.tvap.toLocaleString("en-US") + '</strong>' +
         '</br>' + 'Percent Black VAP: ' + '<strong>' + (e.features[0].properties.pct_bvp * 100).toFixed() + '%' + '</strong>' +
@@ -450,8 +450,8 @@ map.on("mousemove", "house_r1_popup", function(e) {
     if (features.length) {
 
         document.getElementById('tooltip').innerHTML = 
-        '<h3>' + '<strong>' + 'Enacted House Map' + '</strong>' + '</h3>' +
-        '<h3>' + 'State House District ' + e.features[0].properties.district + '</h3>' +
+        '<span class="tooltip-title">' + '<strong>' + 'Enacted House Map' + '</strong>' + '</span>' +
+        '<span class="tooltip-title">' + 'State House District ' + e.features[0].properties.district + '</span class="tooltip-title">' +
                   'Population, 2020: ' + '<strong>' + e.features[0].properties.pop.toLocaleString("en-US") + '</strong>' +
         '</br>' + 'Voting Age Population (VAP), 2020: ' + '<strong>' + e.features[0].properties.tvap.toLocaleString("en-US") + '</strong>' +
         '</br>' + 'Percent Black VAP: ' + '<strong>' + (e.features[0].properties.pct_bvp * 100).toFixed() + '%' + '</strong>' +
@@ -480,8 +480,8 @@ map.on("mousemove", "house_r2_popup", function(e) {
     if (features.length) {
 
         document.getElementById('tooltip').innerHTML = 
-        '<h3>' + '<strong>' + 'House GSDC Remedy Map' + '</strong>' + '</h3>' +
-        '<h3>' + 'State House District ' + e.features[0].properties.district + '</h3>' +
+        '<span class="tooltip-title">' + '<strong>' + 'House GSDC Remedy Map' + '</strong>' + '</span>' +
+        '<span class="tooltip-title">' + 'State House District ' + e.features[0].properties.district + '</span class="tooltip-title">' +
                   'Population, 2020: ' + '<strong>' + e.features[0].properties.pop.toLocaleString("en-US") + '</strong>' +
         '</br>' + 'Voting Age Population (VAP), 2020: ' + '<strong>' + e.features[0].properties.tvap.toLocaleString("en-US") + '</strong>' +
         '</br>' + 'Percent Black VAP: ' + '<strong>' + (e.features[0].properties.pct_bvp * 100).toFixed() + '%' + '</strong>' +
@@ -540,8 +540,8 @@ map.on("mousemove", "congress_proposed_popup", function(e) {
     if (features.length) {
 
         document.getElementById('tooltip').innerHTML = 
-        '<h3>' + '<strong>' + 'Map proposed by Senate Committee Chair, Sept. 27, 2021' + '</strong>' + '</h3>' +
-        '<h3>' + '<strong>' + 'Proposed ' + '</strong>' + 'Congressional District ' + e.features[0].properties.district + '</h3>' +
+        '<span class="tooltip-title">' + '<strong>' + 'Map proposed by Senate Committee Chair, Sept. 27, 2021' + '</strong>' + '</span>' +
+        '<span class="tooltip-title">' + '<strong>' + 'Proposed ' + '</strong>' + 'Congressional District ' + e.features[0].properties.district + '</span class="tooltip-title">' +
                   'Population, 2020: ' + '<strong>' + e.features[0].properties.pop.toLocaleString("en-US") + '</strong>' +
         '</br>' + 'Voting Age Population (VAP), 2020: ' + '<strong>' + e.features[0].properties.tvap.toLocaleString("en-US") + '</strong>' +
         '</br>' + 'Percent Black VAP: ' + '<strong>' + (e.features[0].properties.pct_bvp * 100).toFixed() + '%' + '</strong>' +
@@ -570,8 +570,8 @@ map.on("mousemove", "congress_proposed_2_popup", function(e) {
     if (features.length) {
 
         document.getElementById('tooltip').innerHTML = 
-        '<h3>' + '<strong>' + 'Map proposed by House and Senate Democratic Caucuses, Oct. 21, 2021' + '</strong>' + '</h3>' +
-        '<h3>' + '<strong>' + 'Proposed ' + '</strong>' + 'Congressional District ' + e.features[0].properties.district + '</h3>' +
+        '<span class="tooltip-title">' + '<strong>' + 'Map proposed by House and Senate Democratic Caucuses, Oct. 21, 2021' + '</strong>' + '</span>' +
+        '<span class="tooltip-title">' + '<strong>' + 'Proposed ' + '</strong>' + 'Congressional District ' + e.features[0].properties.district + '</span class="tooltip-title">' +
                   'Population, 2020: ' + '<strong>' + e.features[0].properties.pop.toLocaleString("en-US") + '</strong>' +
         '</br>' + 'Voting Age Population (VAP), 2020: ' + '<strong>' + e.features[0].properties.tvap.toLocaleString("en-US") + '</strong>' +
         '</br>' + 'Percent Black VAP: ' + '<strong>' + (e.features[0].properties.pct_bvp * 100).toFixed() + '%' + '</strong>' +
@@ -600,8 +600,8 @@ map.on("mousemove", "congress_proposed_3_popup", function(e) {
     if (features.length) {
 
         document.getElementById('tooltip').innerHTML = 
-        '<h3>' + '<strong>' + 'Previous Congressional Map (2021 - 2023)' + '</strong>' + '</h3>' +
-        '<h3>' + 'Congressional District ' + e.features[0].properties.district + '</h3>' +
+        '<span class="tooltip-title">' + '<strong>' + 'Previous Congressional Map (2021 - 2023)' + '</strong>' + '</span>' +
+        '<span class="tooltip-title">' + 'Congressional District ' + e.features[0].properties.district + '</span class="tooltip-title">' +
                   'Population, 2020: ' + '<strong>' + e.features[0].properties.pop.toLocaleString("en-US") + '</strong>' +
         '</br>' + 'Voting Age Population (VAP), 2020: ' + '<strong>' + e.features[0].properties.tvap.toLocaleString("en-US") + '</strong>' +
         '</br>' + 'Percent Black VAP: ' + '<strong>' + (e.features[0].properties.pct_bvp * 100).toFixed() + '%' + '</strong>' +
@@ -630,8 +630,8 @@ map.on("mousemove", "congress_r1_popup", function(e) {
     if (features.length) {
 
         document.getElementById('tooltip').innerHTML = 
-        '<h3>' + '<strong>' + 'Enacted US Congress Map' + '</strong>' + '</h3>' +
-        '<h3>' + 'Congressional District ' + e.features[0].properties.district + '</h3>' +
+        '<span class="tooltip-title">' + '<strong>' + 'Enacted US Congress Map' + '</strong>' + '</span>' +
+        '<span class="tooltip-title">' + 'Congressional District ' + e.features[0].properties.district + '</span class="tooltip-title">' +
                   'Population, 2020: ' + '<strong>' + e.features[0].properties.pop.toLocaleString("en-US") + '</strong>' +
         '</br>' + 'Voting Age Population (VAP), 2020: ' + '<strong>' + e.features[0].properties.tvap.toLocaleString("en-US") + '</strong>' +
         '</br>' + 'Percent Black VAP: ' + '<strong>' + (e.features[0].properties.pct_bvp * 100).toFixed() + '%' + '</strong>' +
@@ -660,8 +660,8 @@ map.on("mousemove", "congress_r2_popup", function(e) {
     if (features.length) {
 
         document.getElementById('tooltip').innerHTML = 
-        '<h3>' + '<strong>' + 'US Congress GHDC & GSDC Remedy Map' + '</strong>' + '</h3>' +
-        '<h3>' + 'Congressional District ' + e.features[0].properties.district + '</h3>' +
+        '<span class="tooltip-title">' + '<strong>' + 'US Congress GHDC & GSDC Remedy Map' + '</strong>' + '</span>' +
+        '<span class="tooltip-title">' + 'Congressional District ' + e.features[0].properties.district + '</span class="tooltip-title">' +
                   'Population, 2020: ' + '<strong>' + e.features[0].properties.pop.toLocaleString("en-US") + '</strong>' +
         '</br>' + 'Voting Age Population (VAP), 2020: ' + '<strong>' + e.features[0].properties.tvap.toLocaleString("en-US") + '</strong>' +
         '</br>' + 'Percent Black VAP: ' + '<strong>' + (e.features[0].properties.pct_bvp * 100).toFixed() + '%' + '</strong>' +
