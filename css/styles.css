@@ -30,55 +30,58 @@ div#new-controls {
 	z-index: 100;
 	font-size: 1.2em;
 	font-family: "Arial";
+	width: 100%;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	margin: 10px;
   }
-  
+
   #logo-container {
-	position: absolute;
-	right: 15px;
-	max-height: 80px; 
-	width: auto;
-	left: auto;
-	top: 10px;
-	bottom: auto;
-	z-index: 100;
+	height: 45px;
+    background-color: black;
+	align-items: center; 
+	/* text-align: center; */
   }
 
   #logo {
-	max-height: 80px;  
-	float: right;
+	height: 40px;
+	margin: 2px 0px 0px 10px;
+	float: left;
   }
 
-  /* .boundary-and-background {
+  .explorer {
+	color: #ffffff;
+	font-family: "Helvetica";
+    font-weight: 700;
+    font-style: normal;
+    font-size: 28px;
+    letter-spacing: 0em;
+	text-align: center;
+  }
+
+  .boundary-and-background {
 	display: flex; 
-  } */
+	flex-wrap: wrap;
+  }
+
   
  .background-layers {
 	margin-left: 20px;
   }
 
-  .toggle-container {
+  /* .toggle-container {
 	display: flex;
-  }
+  } */
   
   .toggle-label {
 	color: #828181;
   } 
 
   .search-buttons {
-	margin: 1px;
+	margin: 2px;
+	/* max-width: 80%; */
   }
-
-
-@media (max-width: 985px) { 
-	#logo {
-		top: auto;
-	    bottom: 35px;
-	    z-index: 99999;
-	    left: auto;
-	    right: 5px;
-	    /* height: 60px; */
-	}
-}
 
 
 /*landscape mode*/
@@ -89,57 +92,25 @@ div#new-controls {
 } */
 
 
-/* Media query for desktop screens (larger than 768px) */
-@media (min-width: 768px) {
-	/* .banner {
-  		width: 100%; 
-		display: flex; 
-	} */
-  
-	div#new-controls {
-	  width: 80%; 
-	  margin: 10px 0px 0 10px;
-	}
-  
-	#logo-container {
-	  width: 20%; 
-	}
-  
-	.boundary-and-background {
-	  display: flex; 
-	}
+/* Media query for smaller desktop screens (less than 1000px) */
+
+@media (max-width: 1000px) {
 
 	.toggle-container {
 		display: flex; 
+		flex-wrap: wrap;
 		margin-top: 10px;
-	  }
-  
-	.toggle {
-	  margin-right: 10px; 
 	}
-  }
 
-  @media (max-width: 900px) {
-	#logo {
-		position: fixed; 
-		bottom: 25px;
-		right: 10px;
-	}
+	.toggle {
+		margin-right: 10px; 
+	  }
 }
   
   /* Media query for mobile screens (smaller than 768px) */
   @media (max-width: 767px) {
 	.banner {
 	  display: block; 
-	}
-  
-	div#new-controls {
-	margin: 10px 10px 5px 10px;
-	  font-size: 1.1em;
-	}
-
-	.toggle-container {
-		margin-top: 10px;
 	}
 
 	.toggle {
@@ -173,6 +144,7 @@ LEGEND STYLING*/
 }
 
 
+
 #legend-ui li {
 	list-style-type: none;
 	text-align: center;
@@ -185,17 +157,6 @@ li.dataTitle span.keycolor {
 	width: 0px !important;
     margin: 0 !important;
 }
-
-@media (max-width: 785px) {
-	#legend-ui li {
-		font:12px "Helvetica";
-		color:#29315F;
-		}
-	ul.legend {
-		width: 165px;
-	}
-
-	}
 
 	ul#legend-ui {
 	padding-left: 0px;
@@ -210,7 +171,7 @@ li.dataTitle span.keycolor {
 	border-radius: 7pt;
 	background-color: #fafafa;
 	flex-wrap: wrap; /*this is what makes the legend wrap*/
-	width: 180px;
+	width: 185px;
 	align-items: center;
 	}
 
@@ -237,6 +198,18 @@ li.dataTitle span.keycolor {
 
 	#legend-ui li ul.legend li {
 		display: none;
+	}
+
+	@media (max-width: 785px) {
+		#legend-ui li {
+			font:12px "Helvetica";
+			color:#29315F;
+			}
+	
+		ul.legend {
+			width: 125px;
+		}
+	
 	}
 
 	ul.legend li.bvap1 span.keycolor { background-color: #f2f0f7; }

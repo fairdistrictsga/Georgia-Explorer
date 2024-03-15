@@ -71,9 +71,7 @@ else {
 mapboxgl.accessToken = Scrollbars.reset();
 var map = new mapboxgl.Map({
 	container: 'map', // container id
-	//style: 'mapbox://styles/skhaji/ckkecj0b70t4a17mx02nc94up', // style sara created 
     style: "mapbox://styles/mapbox/light-v10",
-    // style: "mapbox://styles/skhaji/ckmp0h2wf3g5h18n1d9vkp2kf",
 	center: center, // starting position [lng, lat]
 	// zoom: 6.5, 
     zoom: zoomlevel,
@@ -512,8 +510,8 @@ map.on("mousemove", "congress_popup", function(e) {
     if (features.length) {
 
         document.getElementById('tooltip').innerHTML = 
-        '<h3>' + '<strong>' + 'Previous Congressional Map (2011 - 2021)' + '</strong>' + '</h3>' +
-        '<h3>' + 'Congressional District ' + e.features[0].properties.district + '</h3>' +
+        '<h4>' + '<strong>' + 'Previous Congressional Map (2011 - 2021)' + '</strong>' + '</h4>' +
+        '<h4>' + 'Congressional District ' + e.features[0].properties.district + '</h4>' +
                   'Population, 2020: ' + '<strong>' + e.features[0].properties.pop.toLocaleString("en-US") + '</strong>' +
         '</br>' + 'Voting Age Population (VAP), 2020: ' + '<strong>' + e.features[0].properties.tvap.toLocaleString("en-US") + '</strong>' +
         '</br>' + 'Percent Black VAP: ' + '<strong>' + (e.features[0].properties.pct_bvp * 100).toFixed() + '%' + '</strong>' +
