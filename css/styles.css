@@ -338,6 +338,12 @@ li.dataTitle span.keycolor {
 	    width: 350px;
 	    height: 350px;
 	}
+
+	#sidebar {
+	    bottom: 35px;
+		top: auto;
+		right: 10px;
+	}
 }
 
 #sidebar {
@@ -357,56 +363,12 @@ li.dataTitle span.keycolor {
     line-height: 1.25em !important;
 }
 
-@media (max-width: 785px) {
-	#sidebar {
-	    bottom: 35px;
-		top: auto;
-		right: 10px;
-	}
-
-}
-
 #tooltip {
 	width: auto;
 }
 
 .tooltip-title {
 	font-size: 1.2em;
-}
-
-
-@media (max-width: 785px) {
-	#sidebar {
-	    top: 200px;
-	    width: 240px;
-	    right:20px;
-	    left:auto;
-	    font:12px/18px "Helvetica";
-	    color:#29315F;
-	}
-}
-
-@media (max-width: 350px) {
-	#sidebar {
-	    top: 140px;
-	    left: 50px;
-	    right: auto;
-	    width: 240px;
-	    font:12px/18px "Helvetica";
-	    color:#29315F;
-	}
-}
-
-
-@media (max-height: 400px) {
-	#sidebar {
-	    top: 85px;
-	    right: 10px;
-	    left:auto;
-	    width: 200px;
-	    font:12px/18px "Helvetica";
-	    color:#29315F;
-	}
 }
 
 
