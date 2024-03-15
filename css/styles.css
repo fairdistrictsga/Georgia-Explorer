@@ -344,7 +344,7 @@ li.dataTitle span.keycolor {
 
 #sidebar {
     position: absolute;
-    top: 200px;
+    top: 210px;
     border-radius: 4px;
     right: 47px;
     left: auto;
@@ -361,6 +361,10 @@ li.dataTitle span.keycolor {
 
 #tooltip {
 	width: auto;
+}
+
+.tooltip-title {
+	font-size: 1.2em;
 }
 
 

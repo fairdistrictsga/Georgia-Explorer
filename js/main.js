@@ -510,7 +510,7 @@ map.on("mousemove", "congress_popup", function(e) {
     if (features.length) {
 
         document.getElementById('tooltip').innerHTML = 
-        '<h4>' + '<strong>' + 'Previous Congressional Map (2011 - 2021)' + '</strong>' + '</h4>' +
+        '<span class="tooltip-title">' + '<strong>' + 'Previous Congressional Map (2011 - 2021)' + '</strong>' + '</span>' +
         '<h4>' + 'Congressional District ' + e.features[0].properties.district + '</h4>' +
                   'Population, 2020: ' + '<strong>' + e.features[0].properties.pop.toLocaleString("en-US") + '</strong>' +
         '</br>' + 'Voting Age Population (VAP), 2020: ' + '<strong>' + e.features[0].properties.tvap.toLocaleString("en-US") + '</strong>' +
