@@ -338,17 +338,12 @@ li.dataTitle span.keycolor {
 	    width: 350px;
 	    height: 350px;
 	}
-
-	#sidebar {
-	    bottom: 35px;
-		top: auto;
-		right: 10px;
-	}
 }
 
 #sidebar {
     position: absolute;
     top: 210px;
+	bottom: auto;
     border-radius: 4px;
     right: 47px;
     left: auto;
@@ -362,6 +357,13 @@ li.dataTitle span.keycolor {
     box-shadow: 0 0 0 2px rgb(0 0 0 / 10%);
     line-height: 1.25em !important;
 }
+@media (max-width: 785px) {
+	#sidebar {
+		bottom: 35px;
+		top: auto;
+		right: 10px;
+	}	
+}		
 
 #tooltip {
 	width: auto;
