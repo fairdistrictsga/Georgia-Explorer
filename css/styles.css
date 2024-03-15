@@ -329,9 +329,7 @@ li.dataTitle span.keycolor {
 	    color:#29315F;
 	    top: 54%;
 	}
-}
 
-@media (max-width: 785px) {
 	.mapboxgl-popup-content {
 	    padding:0px 7px 0px;
 	    outline: black;
@@ -357,6 +355,15 @@ li.dataTitle span.keycolor {
     color: #29315F;
     box-shadow: 0 0 0 2px rgb(0 0 0 / 10%);
     line-height: 1.25em !important;
+}
+
+@media (max-width: 785px) {
+	#sidebar {
+	    bottom: 35px;
+		top: auto;
+		right: 10px;
+	}
+
 }
 
 #tooltip {
