@@ -133,7 +133,7 @@ var popup = new mapboxgl.Popup({
 
 // When the user moves their mouse over the district-fill layer, we'll update the filter in
 // the district-fills-hover layer to only show the matching district, thus making a hover effect.
-map.on("touchstart", "senate_popup", function(e) {
+map.on("mousemove", "senate_popup", function(e) {
   $('#sidebar').show();
 // create hover effect
 	map.setFilter("senate_hover", ["==", "district", e.features[0].properties.district]);
@@ -148,8 +148,8 @@ map.on("touchstart", "senate_popup", function(e) {
     if (features.length) {
 
         document.getElementById('tooltip').innerHTML = 
-        '<span class="tooltip-title">' + '<strong>' + 'Previous State Senate Map (2014 - 2021)' + '</strong>' + '</span>' + '</br>' +
-        '<span class="tooltip-title">' + 'State Senate District ' + e.features[0].properties.district + '</span class="tooltip-title">' + '</br>' +
+        // '<span class="tooltip-title">' + '<strong>' + 'Previous State Senate Map (2014 - 2021)' + '</strong>' + '</span>' + '</br>' +
+        // '<span class="tooltip-title">' + 'State Senate District ' + e.features[0].properties.district + '</span class="tooltip-title">' + '</br>' +
         'Population, 2020: ' + '<strong>' + e.features[0].properties.pop.toLocaleString("en-US") + '</strong>' +
         '</br>' + 'Voting Age Population (VAP), 2020: ' + '<strong>' + e.features[0].properties.tvap.toLocaleString("en-US") + '</strong>' +
         '</br>' + 'Percent Black VAP: ' + '<strong>' + (e.features[0].properties.pct_bvp * 100).toFixed() + '%' + '</strong>' +
