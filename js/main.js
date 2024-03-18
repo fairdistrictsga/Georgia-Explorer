@@ -133,7 +133,7 @@ var popup = new mapboxgl.Popup({
 
 // When the user moves their mouse over the district-fill layer, we'll update the filter in
 // the district-fills-hover layer to only show the matching district, thus making a hover effect.
-map.on("mousemove", "senate_popup", function(e) {
+map.on("touchstart", "senate_popup", function(e) {
   $('#sidebar').show();
 // create hover effect
 	map.setFilter("senate_hover", ["==", "district", e.features[0].properties.district]);
