@@ -248,7 +248,7 @@ map.on("mousemove", "senate_p3_popup", function(e) {
         '</br>' + 'Percent Asian VAP: ' + '<strong>' + (e.features[0].properties.pct_avp * 100).toFixed() + '%' + '</strong>' +
         '</br>' + 'Percent Hispanic VAP: ' + '<strong>' + (e.features[0].properties.pct_hvp * 100).toFixed() + '%' + '</strong>' +
         '</br>' + 'Percent Minority VAP: ' + '<strong>' + (e.features[0].properties.pct_bp_ * 100).toFixed() + '%' + '</strong>' +
-        '</br>' + 'Partisan Lean Estimate, Percent Democrat 2018-21: ' + '<strong>' + (e.features[0].properties.partisan * 100).toFixed() + '%' + '</strong>';
+        '</br>' + 'Partisan Lean Estimate, Percent Democrat 2018-22: ' + '<strong>' + (e.features[0].properties.partisan * 100).toFixed() + '%' + '</strong>';
     } else {
         document.getElementById('tooltip-name').innerHTML = "";
         document.getElementById('tooltip').innerHTML = "";
@@ -278,7 +278,7 @@ map.on("mousemove", "senate_r1_popup", function(e) {
         '</br>' + 'Percent Asian VAP: ' + '<strong>' + (e.features[0].properties.pct_avp * 100).toFixed() + '%' + '</strong>' +
         '</br>' + 'Percent Hispanic VAP: ' + '<strong>' + (e.features[0].properties.pct_hvp * 100).toFixed() + '%' + '</strong>' +
         '</br>' + 'Percent Minority VAP: ' + '<strong>' + (e.features[0].properties.pct_bp_ * 100).toFixed() + '%' + '</strong>' +
-        '</br>' + 'Partisan Lean Estimate, Percent Democrat 2018-21: ' + '<strong>' + (e.features[0].properties.partisan * 100).toFixed() + '%' + '</strong>';
+        '</br>' + 'Partisan Lean Estimate, Percent Democrat 2018-22: ' + '<strong>' + (e.features[0].properties.partisan * 100).toFixed() + '%' + '</strong>';
     } else {
         document.getElementById('tooltip-name').innerHTML = "";
         document.getElementById('tooltip').innerHTML = "";
@@ -428,7 +428,7 @@ map.on("mousemove", "house_p3_popup", function(e) {
         '</br>' + 'Percent Asian VAP: ' + '<strong>' + (e.features[0].properties.pct_avp * 100).toFixed() + '%' + '</strong>' +
         '</br>' + 'Percent Hispanic VAP: ' + '<strong>' + (e.features[0].properties.pct_hvp * 100).toFixed() + '%' + '</strong>' +
         '</br>' + 'Percent Minority VAP: ' + '<strong>' + (e.features[0].properties.pct_bp_ * 100).toFixed() + '%' + '</strong>' +
-        '</br>' + 'Partisan Lean Estimate, Percent Democrat 2018-21: ' + '<strong>' + (e.features[0].properties.partisan * 100).toFixed() + '%' + '</strong>';
+        '</br>' + 'Partisan Lean Estimate, Percent Democrat 2018-22: ' + '<strong>' + (e.features[0].properties.partisan * 100).toFixed() + '%' + '</strong>';
     } else {
         document.getElementById('tooltip-name').innerHTML = "";
         document.getElementById('tooltip').innerHTML = "";
@@ -458,7 +458,7 @@ map.on("mousemove", "house_r1_popup", function(e) {
         '</br>' + 'Percent Asian VAP: ' + '<strong>' + (e.features[0].properties.pct_avp * 100).toFixed() + '%' + '</strong>' +
         '</br>' + 'Percent Hispanic VAP: ' + '<strong>' + (e.features[0].properties.pct_hvp * 100).toFixed() + '%' + '</strong>' +
         '</br>' + 'Percent Minority VAP: ' + '<strong>' + (e.features[0].properties.pct_bp_ * 100).toFixed() + '%' + '</strong>' +
-        '</br>' + 'Partisan Lean Estimate, Percent Democrat 2018-21: ' + '<strong>' + (e.features[0].properties.partisan * 100).toFixed() + '%' + '</strong>';
+        '</br>' + 'Partisan Lean Estimate, Percent Democrat 2018-22: ' + '<strong>' + (e.features[0].properties.partisan * 100).toFixed() + '%' + '</strong>';
     } else {
         document.getElementById('tooltip-name').innerHTML = "";
         document.getElementById('tooltip').innerHTML = "";
@@ -608,7 +608,7 @@ map.on("mousemove", "congress_proposed_3_popup", function(e) {
         '</br>' + 'Percent Asian VAP: ' + '<strong>' + (e.features[0].properties.pct_avp * 100).toFixed() + '%' + '</strong>' +
         '</br>' + 'Percent Hispanic VAP: ' + '<strong>' + (e.features[0].properties.pct_hvp * 100).toFixed() + '%' + '</strong>' +
         '</br>' + 'Percent Minority VAP: ' + '<strong>' + (e.features[0].properties.pct_bp_ * 100).toFixed() + '%' + '</strong>' +
-       '</br>' + 'Partisan Lean Estimate, Percent Democrat 2018-21: ' + '<strong>' + (e.features[0].properties.partisan * 100).toFixed() + '%' + '</strong>';
+       '</br>' + 'Partisan Lean Estimate, Percent Democrat 2018-22: ' + '<strong>' + (e.features[0].properties.partisan * 100).toFixed() + '%' + '</strong>';
     } else {
         document.getElementById('tooltip-name').innerHTML = "";
         document.getElementById('tooltip').innerHTML = "";
@@ -638,7 +638,7 @@ map.on("mousemove", "congress_r1_popup", function(e) {
         '</br>' + 'Percent Asian VAP: ' + '<strong>' + (e.features[0].properties.pct_avp * 100).toFixed() + '%' + '</strong>' +
         '</br>' + 'Percent Hispanic VAP: ' + '<strong>' + (e.features[0].properties.pct_hvp * 100).toFixed() + '%' + '</strong>' +
         '</br>' + 'Percent Minority VAP: ' + '<strong>' + (e.features[0].properties.pct_bp_ * 100).toFixed() + '%' + '</strong>' +
-       '</br>' + 'Partisan Lean Estimate, Percent Democrat 2018-21: ' + '<strong>' + (e.features[0].properties.partisan * 100).toFixed() + '%' + '</strong>';
+       '</br>' + 'Partisan Lean Estimate, Percent Democrat 2018-22: ' + '<strong>' + (e.features[0].properties.partisan * 100).toFixed() + '%' + '</strong>';
     } else {
         document.getElementById('tooltip-name').innerHTML = "";
         document.getElementById('tooltip').innerHTML = "";
@@ -938,7 +938,7 @@ map.addControl(new mapboxgl.NavigationControl({
         // { title: '80% to 100%', class: 'bipocvapLegend bipocvap5' }
       ],
       [
-        { title: 'Partisan Lean, Percent Democrat (2018-2021)', id: 'precinct_pleanLegendTitle', class: 'precinct_pleanLegend dataTitle' },
+        { title: 'Partisan Lean, Percent Democrat (2018-2022)', id: 'precinct_pleanLegendTitle', class: 'precinct_pleanLegend dataTitle' },
         { title: '< 40%', class: 'precinct_pleanLegend precinct_plean1' },
         { title: '40% to 46.5%', class: 'precinct_pleanLegend precinct_plean2' },
         { title: '46.5% to 50%', class: 'precinct_pleanLegend precinct_plean3' },
