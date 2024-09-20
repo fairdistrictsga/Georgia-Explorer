@@ -22,11 +22,11 @@
       },
       'src_house_p3': {
         type:'geojson',
-        data:'data/enacted_house22_2024update.geojson'
+        data:'data/house_enacted_2123_2024update.geojson'
       },
       'src_house_r1': {
         type:'geojson',
-        data:'data/house_remedy_1_2024update.geojson'
+        data:'data/house_enacted_24_2024update.geojson'
       },
       'src_house_r2': {
         type:'geojson',
@@ -46,11 +46,11 @@
       },
       'src_senate_p3': {
         type:'geojson',
-        data:'data/enacted_senate22_2024update.geojson'
+        data:'data/senate_enacted_2123_2024update.geojson'
       },
       'src_senate_r1': {
         type:'geojson',
-        data:'data/senate_remedy_40pct_2024update.geojson'
+        data:'data/senate_enacted_24_2024update.geojson'
       },
       'src_senate_r2': {
         type:'geojson',
@@ -70,11 +70,11 @@
       },
       'src_congress_proposed_3': {
         type:'geojson',
-        data:'data/enacted_congress22_2024update.geojson'
+        data:'data/congress_enacted_2123_2024update.geojson'
       },
       'src_congress_r1': {
         type:'geojson',
-        data:'data/congress_remedy_1_2024update.geojson'
+        data:'data/congress_enacted_24_2024update.geojson'
       },
       'src_congress_r2': {
         type:'geojson',
